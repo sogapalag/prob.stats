@@ -1,0 +1,1187 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Notes of Probability & Statistics.">
+      
+      
+      
+        <meta name="author" content="Zhaopeng Yan">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.10">
+    
+    
+      
+        <title>Metric - prob.stats</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.1fe995fd.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#ffffff">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,400i,700%7CFira+Code&display=fallback">
+        <style>:root{--md-text-font-family:"Fira Sans";--md-code-font-family:"Fira Code"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="white" data-md-color-accent="pink">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#notation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="prob.stats" class="md-header__button md-logo" aria-label="prob.stats" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            prob.stats
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Metric
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/sogapalag/prob.stats/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    sogapalag/prob.stats
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../index.html" class="md-tabs__link">
+        Introduction
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="index.html" class="md-tabs__link md-tabs__link--active">
+        Analysis
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="prob.stats" class="md-nav__button md-logo" aria-label="prob.stats" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+
+    </a>
+    prob.stats
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/sogapalag/prob.stats/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    sogapalag/prob.stats
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      <label class="md-nav__link" for="__nav_1">
+        Introduction
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Introduction" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Introduction
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        Intro
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2">
+        Analysis
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Analysis" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Analysis
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        Intro
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="countable.html" class="md-nav__link">
+        Countable
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sequence.html" class="md-nav__link">
+        Sequence
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="series.html" class="md-nav__link">
+        Series
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="function.html" class="md-nav__link">
+        Function
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Metric
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="metric.html" class="md-nav__link md-nav__link--active">
+        Metric
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#notation" class="md-nav__link">
+    Notation
+  </a>
+  
+    <nav class="md-nav" aria-label="Notation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cauchyschwarz-inequality" class="md-nav__link">
+    Cauchy–Schwarz inequality
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ellpellp-space" class="md-nav__link">
+    \ell^p\ell^p space
+  </a>
+  
+    <nav class="md-nav" aria-label="\ell^p\ell^p space">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#theorem" class="md-nav__link">
+    Theorem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#corollary" class="md-nav__link">
+    Corollary
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limit-convergence" class="md-nav__link">
+    Limit, convergence
+  </a>
+  
+    <nav class="md-nav" aria-label="Limit, convergence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_1" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#theorem_1" class="md-nav__link">
+    Theorem
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#closed-and-open" class="md-nav__link">
+    Closed and open
+  </a>
+  
+    <nav class="md-nav" aria-label="Closed and open">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#theorem_2" class="md-nav__link">
+    Theorem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#theorem_3" class="md-nav__link">
+    Theorem
+  </a>
+  
+    <nav class="md-nav" aria-label="Theorem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proof" class="md-nav__link">
+    Proof
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#theorem_4" class="md-nav__link">
+    Theorem
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#continuity" class="md-nav__link">
+    Continuity
+  </a>
+  
+    <nav class="md-nav" aria-label="Continuity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#theorem_5" class="md-nav__link">
+    Theorem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#theorem_6" class="md-nav__link">
+    Theorem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uniformly-continous" class="md-nav__link">
+    Uniformly continous
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compactness" class="md-nav__link">
+    Compactness
+  </a>
+  
+    <nav class="md-nav" aria-label="Compactness">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#theorems" class="md-nav__link">
+    Theorems
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heineborel-theorem" class="md-nav__link">
+    Heine–Borel theorem
+  </a>
+  
+    <nav class="md-nav" aria-label="Heine–Borel theorem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proof_1" class="md-nav__link">
+    Proof
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#theorem_7" class="md-nav__link">
+    Theorem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#theorem_8" class="md-nav__link">
+    Theorem
+  </a>
+  
+    <nav class="md-nav" aria-label="Theorem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#corollary_1" class="md-nav__link">
+    Corollary
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#completeness" class="md-nav__link">
+    Completeness
+  </a>
+  
+    <nav class="md-nav" aria-label="Completeness">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#theorem_9" class="md-nav__link">
+    Theorem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#theorem_10" class="md-nav__link">
+    Theorem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#theorem_11" class="md-nav__link">
+    Theorem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#banach-fixed-point-theorem" class="md-nav__link">
+    Banach fixed-point theorem
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#notation" class="md-nav__link">
+    Notation
+  </a>
+  
+    <nav class="md-nav" aria-label="Notation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cauchyschwarz-inequality" class="md-nav__link">
+    Cauchy–Schwarz inequality
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ellpellp-space" class="md-nav__link">
+    \ell^p\ell^p space
+  </a>
+  
+    <nav class="md-nav" aria-label="\ell^p\ell^p space">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#theorem" class="md-nav__link">
+    Theorem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#corollary" class="md-nav__link">
+    Corollary
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limit-convergence" class="md-nav__link">
+    Limit, convergence
+  </a>
+  
+    <nav class="md-nav" aria-label="Limit, convergence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_1" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#theorem_1" class="md-nav__link">
+    Theorem
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#closed-and-open" class="md-nav__link">
+    Closed and open
+  </a>
+  
+    <nav class="md-nav" aria-label="Closed and open">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#theorem_2" class="md-nav__link">
+    Theorem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#theorem_3" class="md-nav__link">
+    Theorem
+  </a>
+  
+    <nav class="md-nav" aria-label="Theorem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proof" class="md-nav__link">
+    Proof
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#theorem_4" class="md-nav__link">
+    Theorem
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#continuity" class="md-nav__link">
+    Continuity
+  </a>
+  
+    <nav class="md-nav" aria-label="Continuity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#theorem_5" class="md-nav__link">
+    Theorem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#theorem_6" class="md-nav__link">
+    Theorem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uniformly-continous" class="md-nav__link">
+    Uniformly continous
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compactness" class="md-nav__link">
+    Compactness
+  </a>
+  
+    <nav class="md-nav" aria-label="Compactness">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#theorems" class="md-nav__link">
+    Theorems
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heineborel-theorem" class="md-nav__link">
+    Heine–Borel theorem
+  </a>
+  
+    <nav class="md-nav" aria-label="Heine–Borel theorem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proof_1" class="md-nav__link">
+    Proof
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#theorem_7" class="md-nav__link">
+    Theorem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#theorem_8" class="md-nav__link">
+    Theorem
+  </a>
+  
+    <nav class="md-nav" aria-label="Theorem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#corollary_1" class="md-nav__link">
+    Corollary
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#completeness" class="md-nav__link">
+    Completeness
+  </a>
+  
+    <nav class="md-nav" aria-label="Completeness">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#theorem_9" class="md-nav__link">
+    Theorem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#theorem_10" class="md-nav__link">
+    Theorem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#theorem_11" class="md-nav__link">
+    Theorem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#banach-fixed-point-theorem" class="md-nav__link">
+    Banach fixed-point theorem
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/sogapalag/prob.stats/edit/master/docs/analysis/metric.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  <h1>Metric</h1>
+                
+                <h2 id="notation">Notation<a class="headerlink" href="#notation" title="Permanent link">&para;</a></h2>
+<p>If not specific, default on metric space <span><span class="MathJax_Preview">(M,d)</span><script type="math/tex">(M,d)</script></span>, <span><span class="MathJax_Preview">f:M\rightarrow \mathbb{R}</span><script type="math/tex">f:M\rightarrow \mathbb{R}</script></span>.</p>
+<p>closed: <span><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> contain all limit points <span><span class="MathJax_Preview">\overline{X}</span><script type="math/tex">\overline{X}</script></span></p>
+<ul>
+<li><span><span class="MathJax_Preview">\Leftrightarrow X=\overline{X}</span><script type="math/tex">\Leftrightarrow X=\overline{X}</script></span></li>
+</ul>
+<blockquote>
+<p>e.g. <span><span class="MathJax_Preview">\{x\}, M, \varnothing</span><script type="math/tex">\{x\}, M, \varnothing</script></span> are closed.</p>
+</blockquote>
+<p>Open ball <span><span class="MathJax_Preview">B_\varepsilon(a):\{x\in M:d(x,a)&lt;\varepsilon\}</span><script type="math/tex">B_\varepsilon(a):\{x\in M:d(x,a)<\varepsilon\}</script></span></p>
+<p>open: <span><span class="MathJax_Preview">\forall x\in X</span><script type="math/tex">\forall x\in X</script></span>, <span><span class="MathJax_Preview">\exists B(x)\subseteq X</span><script type="math/tex">\exists B(x)\subseteq X</script></span></p>
+<blockquote>
+<p>e.g. <span><span class="MathJax_Preview">M, \varnothing</span><script type="math/tex">M, \varnothing</script></span> are open.</p>
+</blockquote>
+<h3 id="definition">Definition<a class="headerlink" href="#definition" title="Permanent link">&para;</a></h3>
+<p>A metric <span><span class="MathJax_Preview">d:M\times M\rightarrow [0,\infty)</span><script type="math/tex">d:M\times M\rightarrow [0,\infty)</script></span> should satisfy</p>
+<ol>
+<li><span><span class="MathJax_Preview">d(x,y)=0 \Leftrightarrow x=y</span><script type="math/tex">d(x,y)=0 \Leftrightarrow x=y</script></span></li>
+<li><span><span class="MathJax_Preview">d(x,y)=d(y,x), \forall y\in M</span><script type="math/tex">d(x,y)=d(y,x), \forall y\in M</script></span></li>
+<li><span><span class="MathJax_Preview">d(x,y) \leq d(x,z) + d(y,z), \forall z\in M</span><script type="math/tex">d(x,y) \leq d(x,z) + d(y,z), \forall z\in M</script></span></li>
+</ol>
+<p>e.g. <span><span class="MathJax_Preview">(\mathbb{R}^n,d)</span><script type="math/tex">(\mathbb{R}^n,d)</script></span> is metric space, with <span><span class="MathJax_Preview">d(x,y)=\sqrt{\sum(x-y)^2}</span><script type="math/tex">d(x,y)=\sqrt{\sum(x-y)^2}</script></span></p>
+<h3 id="cauchyschwarz-inequality">Cauchy–Schwarz inequality<a class="headerlink" href="#cauchyschwarz-inequality" title="Permanent link">&para;</a></h3>
+<p><span><span class="MathJax_Preview">|\langle u,v\rangle| \leq \|u\| \|v\|</span><script type="math/tex">|\langle u,v\rangle| \leq \|u\| \|v\|</script></span>, equality iff <span><span class="MathJax_Preview">u,v</span><script type="math/tex">u,v</script></span> linearly dependent.</p>
+<h2 id="ellpellp-space"><span><span class="MathJax_Preview">\ell^p</span><script type="math/tex">\ell^p</script></span> space<a class="headerlink" href="#ellpellp-space" title="Permanent link">&para;</a></h2>
+<p>set of series <span><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span> s.t. <span><span class="MathJax_Preview">(\sum |a|^p)^{1/p}</span><script type="math/tex">(\sum |a|^p)^{1/p}</script></span> converge.</p>
+<h3 id="theorem">Theorem<a class="headerlink" href="#theorem" title="Permanent link">&para;</a></h3>
+<div>
+<div class="MathJax_Preview">
+ a,b\in l^2 \Rightarrow \sum|ab|\rightarrow
+</div>
+<script type="math/tex; mode=display">
+ a,b\in l^2 \Rightarrow \sum|ab|\rightarrow
+</script>
+</div>
+<h3 id="corollary">Corollary<a class="headerlink" href="#corollary" title="Permanent link">&para;</a></h3>
+<div>
+<div class="MathJax_Preview">
+a,b \in l^2 \Rightarrow \sum(a-b)^2\rightarrow \Rightarrow \text{metric}
+</div>
+<script type="math/tex; mode=display">
+a,b \in l^2 \Rightarrow \sum(a-b)^2\rightarrow \Rightarrow \text{metric}
+</script>
+</div>
+<h2 id="limit-convergence">Limit, convergence<a class="headerlink" href="#limit-convergence" title="Permanent link">&para;</a></h2>
+<h3 id="definition_1">Definition<a class="headerlink" href="#definition_1" title="Permanent link">&para;</a></h3>
+<p><span><span class="MathJax_Preview">\forall \varepsilon&gt;0,\exists N&gt;0</span><script type="math/tex">\forall \varepsilon>0,\exists N>0</script></span> s.t. if <span><span class="MathJax_Preview">n\geq N</span><script type="math/tex">n\geq N</script></span> then <span><span class="MathJax_Preview">d(a_n, L) &lt; \varepsilon</span><script type="math/tex">d(a_n, L) < \varepsilon</script></span>.</p>
+<h3 id="theorem_1">Theorem<a class="headerlink" href="#theorem_1" title="Permanent link">&para;</a></h3>
+<p>For <span><span class="MathJax_Preview">R^n</span><script type="math/tex">R^n</script></span>, <span><span class="MathJax_Preview">a\rightarrow a \Leftrightarrow a_k\rightarrow a_k,\forall k\in[n]</span><script type="math/tex">a\rightarrow a \Leftrightarrow a_k\rightarrow a_k,\forall k\in[n]</script></span>.</p>
+<blockquote>
+<p>i.e. equivalent to dimension-wise convergence.
+For <span><span class="MathJax_Preview">l^1,l^2,l^\infty,c_0</span><script type="math/tex">l^1,l^2,l^\infty,c_0</script></span>, only hold <span><span class="MathJax_Preview">\Rightarrow</span><script type="math/tex">\Rightarrow</script></span>. </p>
+</blockquote>
+<h2 id="closed-and-open">Closed and open<a class="headerlink" href="#closed-and-open" title="Permanent link">&para;</a></h2>
+<h3 id="theorem_2">Theorem<a class="headerlink" href="#theorem_2" title="Permanent link">&para;</a></h3>
+<p><span><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> open <span><span class="MathJax_Preview">\Leftrightarrow</span><script type="math/tex">\Leftrightarrow</script></span> <span><span class="MathJax_Preview">X^c</span><script type="math/tex">X^c</script></span> closed.</p>
+<h3 id="theorem_3">Theorem<a class="headerlink" href="#theorem_3" title="Permanent link">&para;</a></h3>
+<p><span><span class="MathJax_Preview">\bigcup</span><script type="math/tex">\bigcup</script></span> of <strong>finite</strong> closeds is closed.</p>
+<blockquote>
+<p><span><span class="MathJax_Preview">\bigcup [1/n,1-1/n] = (0,1)</span><script type="math/tex">\bigcup [1/n,1-1/n] = (0,1)</script></span></p>
+</blockquote>
+<p><span><span class="MathJax_Preview">\bigcap</span><script type="math/tex">\bigcap</script></span> of closeds is closed. </p>
+<h4 id="proof">Proof<a class="headerlink" href="#proof" title="Permanent link">&para;</a></h4>
+<p>Note <span><span class="MathJax_Preview">x\in \overline{\bigcap \mathcal{C}}</span><script type="math/tex">x\in \overline{\bigcap \mathcal{C}}</script></span>, imply <span><span class="MathJax_Preview">x_n\in\bigcap \mathcal{C},\forall n</span><script type="math/tex">x_n\in\bigcap \mathcal{C},\forall n</script></span>.</p>
+<p>Thus <span><span class="MathJax_Preview">x_n\in T,\forall n,\forall T\in\mathcal{C}</span><script type="math/tex">x_n\in T,\forall n,\forall T\in\mathcal{C}</script></span>, imply <span><span class="MathJax_Preview">x\in \overline{T},\forall T</span><script type="math/tex">x\in \overline{T},\forall T</script></span>.</p>
+<p>Since <span><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span> closed, <span><span class="MathJax_Preview">x\in T</span><script type="math/tex">x\in T</script></span> imply <span><span class="MathJax_Preview">x\in \bigcap \mathcal{C}.\square</span><script type="math/tex">x\in \bigcap \mathcal{C}.\square</script></span></p>
+<h3 id="theorem_4">Theorem<a class="headerlink" href="#theorem_4" title="Permanent link">&para;</a></h3>
+<p><span><span class="MathJax_Preview">\bigcap</span><script type="math/tex">\bigcap</script></span> of <strong>finite</strong> opens is open.</p>
+<p><span><span class="MathJax_Preview">\bigcup</span><script type="math/tex">\bigcup</script></span> of opens is open.</p>
+<h2 id="continuity">Continuity<a class="headerlink" href="#continuity" title="Permanent link">&para;</a></h2>
+<h3 id="theorem_5">Theorem<a class="headerlink" href="#theorem_5" title="Permanent link">&para;</a></h3>
+<p><span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> continous on compact <span><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> <span><span class="MathJax_Preview">\Rightarrow</span><script type="math/tex">\Rightarrow</script></span> <span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> bounded on <span><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span>.</p>
+<h3 id="theorem_6">Theorem<a class="headerlink" href="#theorem_6" title="Permanent link">&para;</a></h3>
+<p><span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> continous on compact <span><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> <span><span class="MathJax_Preview">\Rightarrow</span><script type="math/tex">\Rightarrow</script></span> <span><span class="MathJax_Preview">\exists</span><script type="math/tex">\exists</script></span> maximum, minimum on <span><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span>.</p>
+<h3 id="uniformly-continous">Uniformly continous<a class="headerlink" href="#uniformly-continous" title="Permanent link">&para;</a></h3>
+<p><span><span class="MathJax_Preview">\forall \varepsilon&gt;0,\exists\delta&gt;0</span><script type="math/tex">\forall \varepsilon>0,\exists\delta>0</script></span> s.t. if <span><span class="MathJax_Preview">d_1(x,y)&lt;\delta</span><script type="math/tex">d_1(x,y)<\delta</script></span> then <span><span class="MathJax_Preview">d_2(f(x),f(y))&lt;\varepsilon</span><script type="math/tex">d_2(f(x),f(y))<\varepsilon</script></span>.</p>
+<blockquote>
+<p>Cauchy</p>
+</blockquote>
+<h2 id="compactness">Compactness<a class="headerlink" href="#compactness" title="Permanent link">&para;</a></h2>
+<p>compactness property, that is, <strong>any open</strong> cover has <strong>finite</strong> subcover.</p>
+<h3 id="theorems">Theorems<a class="headerlink" href="#theorems" title="Permanent link">&para;</a></h3>
+<p><span><span class="MathJax_Preview">M</span><script type="math/tex">M</script></span> compact <span><span class="MathJax_Preview">\Leftrightarrow</span><script type="math/tex">\Leftrightarrow</script></span> <span><span class="MathJax_Preview">\forall (a),\exists</span><script type="math/tex">\forall (a),\exists</script></span> convergent subsequence.</p>
+<p><span><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> is compact subset of <span><span class="MathJax_Preview">M</span><script type="math/tex">M</script></span> <span><span class="MathJax_Preview">\Rightarrow</span><script type="math/tex">\Rightarrow</script></span> <span><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> closed and bounded.</p>
+<p><span><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> is closed subset of compact <span><span class="MathJax_Preview">M</span><script type="math/tex">M</script></span> <span><span class="MathJax_Preview">\Rightarrow</span><script type="math/tex">\Rightarrow</script></span> <span><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> compact.</p>
+<h3 id="heineborel-theorem">Heine–Borel theorem<a class="headerlink" href="#heineborel-theorem" title="Permanent link">&para;</a></h3>
+<p>For <span><span class="MathJax_Preview">\mathbb{R}^n</span><script type="math/tex">\mathbb{R}^n</script></span>, <span><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> is closed and bounded <span><span class="MathJax_Preview">\Leftrightarrow</span><script type="math/tex">\Leftrightarrow</script></span> <span><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> is compact</p>
+<h4 id="proof_1">Proof<a class="headerlink" href="#proof_1" title="Permanent link">&para;</a></h4>
+<p><span><span class="MathJax_Preview">\Rightarrow</span><script type="math/tex">\Rightarrow</script></span>.
+Similar to <a href="sequence.html#bolzanoweierstrass-theorem">B-W</a>, assume not compact, split <span><span class="MathJax_Preview">[l,r]</span><script type="math/tex">[l,r]</script></span> half, one of which is not compact, thus we have a infinite incompact <span><span class="MathJax_Preview">[l_n,r_n]</span><script type="math/tex">[l_n,r_n]</script></span>, by completeness axiom, <span><span class="MathJax_Preview">(x_n)</span><script type="math/tex">(x_n)</script></span> is picked, which is Cauchy, let the limit be <span><span class="MathJax_Preview">L</span><script type="math/tex">L</script></span>.</p>
+<p>Note <span><span class="MathJax_Preview">\exists U\in \mathcal{C}</span><script type="math/tex">\exists U\in \mathcal{C}</script></span> s.t. <span><span class="MathJax_Preview">L\in U</span><script type="math/tex">L\in U</script></span>, thus <span><span class="MathJax_Preview">\exists B(L) \subseteq U</span><script type="math/tex">\exists B(L) \subseteq U</script></span>, then for sufficiently large n, <span><span class="MathJax_Preview">[l_n,r_n]\subseteq B(L) \subseteq U</span><script type="math/tex">[l_n,r_n]\subseteq B(L) \subseteq U</script></span>, i.e. covered by single <span><span class="MathJax_Preview">U</span><script type="math/tex">U</script></span>, contracted to incompact assumption.<span><span class="MathJax_Preview">\square</span><script type="math/tex">\square</script></span></p>
+<blockquote>
+<p>i.e. Heine–Borel <span><span class="MathJax_Preview">\Leftrightarrow</span><script type="math/tex">\Leftrightarrow</script></span> Bolzano–Weierstrass on <span><span class="MathJax_Preview">\mathbb{R}^n</span><script type="math/tex">\mathbb{R}^n</script></span>.</p>
+</blockquote>
+<h3 id="theorem_7">Theorem<a class="headerlink" href="#theorem_7" title="Permanent link">&para;</a></h3>
+<p><span><span class="MathJax_Preview">f:M_1\rightarrow M_2</span><script type="math/tex">f:M_1\rightarrow M_2</script></span> continous, compact <span><span class="MathJax_Preview">M_1</span><script type="math/tex">M_1</script></span> <span><span class="MathJax_Preview">\Rightarrow</span><script type="math/tex">\Rightarrow</script></span> <span><span class="MathJax_Preview">f(M_1)</span><script type="math/tex">f(M_1)</script></span> compact <span><span class="MathJax_Preview">\Rightarrow</span><script type="math/tex">\Rightarrow</script></span> <span><span class="MathJax_Preview">f(M_1)</span><script type="math/tex">f(M_1)</script></span> closed and bounded.</p>
+<h3 id="theorem_8">Theorem<a class="headerlink" href="#theorem_8" title="Permanent link">&para;</a></h3>
+<p><span><span class="MathJax_Preview">f:M_1\rightarrow M_2</span><script type="math/tex">f:M_1\rightarrow M_2</script></span> continous, compact <span><span class="MathJax_Preview">M_1</span><script type="math/tex">M_1</script></span> <span><span class="MathJax_Preview">\Rightarrow</span><script type="math/tex">\Rightarrow</script></span> <span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> uni. continous on <span><span class="MathJax_Preview">M_1</span><script type="math/tex">M_1</script></span>.</p>
+<h4 id="corollary_1">Corollary<a class="headerlink" href="#corollary_1" title="Permanent link">&para;</a></h4>
+<p><span><span class="MathJax_Preview">f:\mathbb{R^n}\rightarrow \mathbb{{R}}</span><script type="math/tex">f:\mathbb{R^n}\rightarrow \mathbb{{R}}</script></span> continous on closed and bounded <span><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> <span><span class="MathJax_Preview">\Rightarrow</span><script type="math/tex">\Rightarrow</script></span> <span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> uni. continous on <span><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span>. </p>
+<h2 id="completeness">Completeness<a class="headerlink" href="#completeness" title="Permanent link">&para;</a></h2>
+<p>metric <span><span class="MathJax_Preview">M</span><script type="math/tex">M</script></span> called complete, if <span><span class="MathJax_Preview">\forall</span><script type="math/tex">\forall</script></span> Cauchy imply convergence <span><span class="MathJax_Preview">x\in M</span><script type="math/tex">x\in M</script></span>.</p>
+<blockquote>
+<p><span><span class="MathJax_Preview">\mathbb{R}^n, l^1,l^2,l^\infty,c_0</span><script type="math/tex">\mathbb{R}^n, l^1,l^2,l^\infty,c_0</script></span> are complete.</p>
+</blockquote>
+<h3 id="theorem_9">Theorem<a class="headerlink" href="#theorem_9" title="Permanent link">&para;</a></h3>
+<p>convergence <span><span class="MathJax_Preview">x\in M</span><script type="math/tex">x\in M</script></span> <span><span class="MathJax_Preview">\Rightarrow</span><script type="math/tex">\Rightarrow</script></span> Cauchy.</p>
+<h3 id="theorem_10">Theorem<a class="headerlink" href="#theorem_10" title="Permanent link">&para;</a></h3>
+<p><span><span class="MathJax_Preview">\forall M, \exists</span><script type="math/tex">\forall M, \exists</script></span> completion, which is <span><span class="MathJax_Preview">\overline{M}</span><script type="math/tex">\overline{M}</script></span>.</p>
+<h3 id="theorem_11">Theorem<a class="headerlink" href="#theorem_11" title="Permanent link">&para;</a></h3>
+<p>compact <span><span class="MathJax_Preview">\Rightarrow</span><script type="math/tex">\Rightarrow</script></span> complete.</p>
+<h3 id="banach-fixed-point-theorem">Banach fixed-point theorem<a class="headerlink" href="#banach-fixed-point-theorem" title="Permanent link">&para;</a></h3>
+<p>Contracting mapping <span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> on complete metric <span><span class="MathJax_Preview">\Rightarrow</span><script type="math/tex">\Rightarrow</script></span> <span><span class="MathJax_Preview">\exists</span><script type="math/tex">\exists</script></span> unique <span><span class="MathJax_Preview">x=f(x)</span><script type="math/tex">x=f(x)</script></span>.</p>
+<details><summary>Proof</summary><p>Let <span><span class="MathJax_Preview">x_{n+1}=f(x_n)</span><script type="math/tex">x_{n+1}=f(x_n)</script></span> with arbitrary <span><span class="MathJax_Preview">x_0</span><script type="math/tex">x_0</script></span>.</p>
+<p>It's easy to verify <span><span class="MathJax_Preview">(x_n)</span><script type="math/tex">(x_n)</script></span> is Cauchy. By completeness <span><span class="MathJax_Preview">x\in M</span><script type="math/tex">x\in M</script></span>.</p>
+<p>By provable continuity that
+$$
+f(x) = \lim f(x_n) = \lim x_n = x
+$$</p>
+<p>Then unique followed by contracting.<span><span class="MathJax_Preview">\square</span><script type="math/tex">\square</script></span> </p>
+</details>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="function.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Function" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Function
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.477d984a.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.ddd52ceb.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>

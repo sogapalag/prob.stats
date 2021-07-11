@@ -1,0 +1,966 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Notes of Probability & Statistics.">
+      
+      
+      
+        <meta name="author" content="Zhaopeng Yan">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.10">
+    
+    
+      
+        <title>Sequence - prob.stats</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.1fe995fd.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#ffffff">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,400i,700%7CFira+Code&display=fallback">
+        <style>:root{--md-text-font-family:"Fira Sans";--md-code-font-family:"Fira Code"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="white" data-md-color-accent="pink">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#limit" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="prob.stats" class="md-header__button md-logo" aria-label="prob.stats" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            prob.stats
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Sequence
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/sogapalag/prob.stats/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    sogapalag/prob.stats
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../index.html" class="md-tabs__link">
+        Introduction
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="index.html" class="md-tabs__link md-tabs__link--active">
+        Analysis
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="prob.stats" class="md-nav__button md-logo" aria-label="prob.stats" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+
+    </a>
+    prob.stats
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/sogapalag/prob.stats/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    sogapalag/prob.stats
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      <label class="md-nav__link" for="__nav_1">
+        Introduction
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Introduction" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Introduction
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        Intro
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2">
+        Analysis
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Analysis" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Analysis
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        Intro
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="countable.html" class="md-nav__link">
+        Countable
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Sequence
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="sequence.html" class="md-nav__link md-nav__link--active">
+        Sequence
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#limit" class="md-nav__link">
+    Limit
+  </a>
+  
+    <nav class="md-nav" aria-label="Limit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#theorem" class="md-nav__link">
+    Theorem
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algebra" class="md-nav__link">
+    Algebra
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bounded" class="md-nav__link">
+    Bounded
+  </a>
+  
+    <nav class="md-nav" aria-label="Bounded">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_1" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#theorem_1" class="md-nav__link">
+    Theorem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#theorem_2" class="md-nav__link">
+    Theorem
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#squeeze" class="md-nav__link">
+    Squeeze
+  </a>
+  
+    <nav class="md-nav" aria-label="Squeeze">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#theorem_3" class="md-nav__link">
+    Theorem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#definition_2" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#theorem_4" class="md-nav__link">
+    Theorem
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-exponents" class="md-nav__link">
+    Real Exponents
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bolzanoweierstrass-theorem" class="md-nav__link">
+    Bolzano–Weierstrass theorem
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cauchy-condition" class="md-nav__link">
+    Cauchy Condition
+  </a>
+  
+    <nav class="md-nav" aria-label="Cauchy Condition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#theorem_5" class="md-nav__link">
+    Theorem
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lim-sup" class="md-nav__link">
+    lim sup
+  </a>
+  
+    <nav class="md-nav" aria-label="lim sup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_3" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#theorem_6" class="md-nav__link">
+    Theorem
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="series.html" class="md-nav__link">
+        Series
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="function.html" class="md-nav__link">
+        Function
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="metric.html" class="md-nav__link">
+        Metric
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#limit" class="md-nav__link">
+    Limit
+  </a>
+  
+    <nav class="md-nav" aria-label="Limit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#theorem" class="md-nav__link">
+    Theorem
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algebra" class="md-nav__link">
+    Algebra
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bounded" class="md-nav__link">
+    Bounded
+  </a>
+  
+    <nav class="md-nav" aria-label="Bounded">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_1" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#theorem_1" class="md-nav__link">
+    Theorem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#theorem_2" class="md-nav__link">
+    Theorem
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#squeeze" class="md-nav__link">
+    Squeeze
+  </a>
+  
+    <nav class="md-nav" aria-label="Squeeze">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#theorem_3" class="md-nav__link">
+    Theorem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#definition_2" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#theorem_4" class="md-nav__link">
+    Theorem
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-exponents" class="md-nav__link">
+    Real Exponents
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bolzanoweierstrass-theorem" class="md-nav__link">
+    Bolzano–Weierstrass theorem
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cauchy-condition" class="md-nav__link">
+    Cauchy Condition
+  </a>
+  
+    <nav class="md-nav" aria-label="Cauchy Condition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#theorem_5" class="md-nav__link">
+    Theorem
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lim-sup" class="md-nav__link">
+    lim sup
+  </a>
+  
+    <nav class="md-nav" aria-label="lim sup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_3" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#theorem_6" class="md-nav__link">
+    Theorem
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/sogapalag/prob.stats/edit/master/docs/analysis/sequence.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  <h1>Sequence</h1>
+                
+                <h2 id="limit">Limit<a class="headerlink" href="#limit" title="Permanent link">&para;</a></h2>
+<h3 id="definition">Definition<a class="headerlink" href="#definition" title="Permanent link">&para;</a></h3>
+<p><span><span class="MathJax_Preview">(a_n)</span><script type="math/tex">(a_n)</script></span> has limit <span><span class="MathJax_Preview">L\in \mathbb{{R}}</span><script type="math/tex">L\in \mathbb{{R}}</script></span>:</p>
+<p><span><span class="MathJax_Preview">\forall \varepsilon&gt;0, \exists N&gt;0</span><script type="math/tex">\forall \varepsilon>0, \exists N>0</script></span> s.t. if <span><span class="MathJax_Preview">n\geq N</span><script type="math/tex">n\geq N</script></span>, then <span><span class="MathJax_Preview">|a_n - L| &lt; \varepsilon</span><script type="math/tex">|a_n - L| < \varepsilon</script></span>.</p>
+<h3 id="theorem">Theorem<a class="headerlink" href="#theorem" title="Permanent link">&para;</a></h3>
+<p><span><span class="MathJax_Preview">(a_n)</span><script type="math/tex">(a_n)</script></span> has limit <span><span class="MathJax_Preview">L</span><script type="math/tex">L</script></span>, then any subsequence <span><span class="MathJax_Preview">(a_{f(n)})</span><script type="math/tex">(a_{f(n)})</script></span> has same limit <span><span class="MathJax_Preview">L</span><script type="math/tex">L</script></span>.</p>
+<details><summary>Proof</summary><p><span><span class="MathJax_Preview">f(n)\geq f(N) \geq N.\square</span><script type="math/tex">f(n)\geq f(N) \geq N.\square</script></span></p>
+</details>
+<h2 id="algebra">Algebra<a class="headerlink" href="#algebra" title="Permanent link">&para;</a></h2>
+<p>Let
+$$
+\lim_{n\rightarrow\infty}a_n=L,\lim_{n\rightarrow\infty}b_n=M 
+$$
+that
+\begin{align}
+  \lim_{n\rightarrow\infty} (a_n + b_n) &amp;= L + M \\
+  \lim_{n\rightarrow\infty} ca_n &amp;= cL \\
+  \lim_{n\rightarrow\infty} (a_n - b_n) &amp;= L - M \\
+  \lim_{n\rightarrow\infty} a_n  b_n &amp;= L M \\
+  M \neq 0 \Rightarrow \lim_{n\rightarrow\infty} a_n / b_n &amp;= L / M \\
+\end{align}</p>
+<h2 id="bounded">Bounded<a class="headerlink" href="#bounded" title="Permanent link">&para;</a></h2>
+<h3 id="definition_1">Definition<a class="headerlink" href="#definition_1" title="Permanent link">&para;</a></h3>
+<p><span><span class="MathJax_Preview">\forall n, a_n \leq M</span><script type="math/tex">\forall n, a_n \leq M</script></span>.</p>
+<h3 id="theorem_1">Theorem<a class="headerlink" href="#theorem_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>convergent <span><span class="MathJax_Preview">\Rightarrow</span><script type="math/tex">\Rightarrow</script></span> bounded.</li>
+<li>monotone, then convergent <span><span class="MathJax_Preview">\Leftrightarrow</span><script type="math/tex">\Leftrightarrow</script></span> bounded.</li>
+</ul>
+<h3 id="theorem_2">Theorem<a class="headerlink" href="#theorem_2" title="Permanent link">&para;</a></h3>
+<p><span><span class="MathJax_Preview">(a_n)</span><script type="math/tex">(a_n)</script></span> is bounded, and <span><span class="MathJax_Preview">(b_n)</span><script type="math/tex">(b_n)</script></span> limits 0, then <span><span class="MathJax_Preview">(a_nb_n)</span><script type="math/tex">(a_nb_n)</script></span> limits 0.</p>
+<details><summary>Proof</summary><p><span><span class="MathJax_Preview">|b_n| &lt; \varepsilon / M.\square</span><script type="math/tex">|b_n| < \varepsilon / M.\square</script></span></p>
+</details>
+<h2 id="squeeze">Squeeze<a class="headerlink" href="#squeeze" title="Permanent link">&para;</a></h2>
+<h3 id="theorem_3">Theorem<a class="headerlink" href="#theorem_3" title="Permanent link">&para;</a></h3>
+<p><span><span class="MathJax_Preview">\forall n, a_n\leq b_n\leq c_n</span><script type="math/tex">\forall n, a_n\leq b_n\leq c_n</script></span>. If <span><span class="MathJax_Preview">(a_n),(c_n)</span><script type="math/tex">(a_n),(c_n)</script></span> limits <span><span class="MathJax_Preview">L</span><script type="math/tex">L</script></span>, then <span><span class="MathJax_Preview">(b_n)</span><script type="math/tex">(b_n)</script></span> limits <span><span class="MathJax_Preview">L</span><script type="math/tex">L</script></span>.</p>
+<h3 id="definition_2">Definition<a class="headerlink" href="#definition_2" title="Permanent link">&para;</a></h3>
+<p>diverge to infinity:</p>
+<p><span><span class="MathJax_Preview">\forall M, \exists N &gt; 0</span><script type="math/tex">\forall M, \exists N > 0</script></span>, s.t. if <span><span class="MathJax_Preview">n\geq N</span><script type="math/tex">n\geq N</script></span> then <span><span class="MathJax_Preview">a_n&gt;M</span><script type="math/tex">a_n>M</script></span>.</p>
+<h3 id="theorem_4">Theorem<a class="headerlink" href="#theorem_4" title="Permanent link">&para;</a></h3>
+<p><span><span class="MathJax_Preview">\forall n, a_n\leq b_n</span><script type="math/tex">\forall n, a_n\leq b_n</script></span>, if <span><span class="MathJax_Preview">(a_n)</span><script type="math/tex">(a_n)</script></span> diverge to <span><span class="MathJax_Preview">\infty</span><script type="math/tex">\infty</script></span>, then <span><span class="MathJax_Preview">(b_n)</span><script type="math/tex">(b_n)</script></span> diverge to <span><span class="MathJax_Preview">\infty</span><script type="math/tex">\infty</script></span>.</p>
+<h2 id="real-exponents">Real Exponents<a class="headerlink" href="#real-exponents" title="Permanent link">&para;</a></h2>
+<p><span><span class="MathJax_Preview">a^x = \lim a^{r_n}</span><script type="math/tex">a^x = \lim a^{r_n}</script></span> is well defined.</p>
+<h2 id="bolzanoweierstrass-theorem">Bolzano–Weierstrass theorem<a class="headerlink" href="#bolzanoweierstrass-theorem" title="Permanent link">&para;</a></h2>
+<p>bounded <span><span class="MathJax_Preview">\Rightarrow \exists</span><script type="math/tex">\Rightarrow \exists</script></span> convergent subsequence.</p>
+<details><summary>Proof</summary><p>bounded, i.e. <span><span class="MathJax_Preview">a_n \in [l,r]</span><script type="math/tex">a_n \in [l,r]</script></span>,
+take <span><span class="MathJax_Preview">a_{n_1}</span><script type="math/tex">a_{n_1}</script></span> from which.</p>
+<p>Note one of <span><span class="MathJax_Preview">[l,\frac{l+r}{2}]</span><script type="math/tex">[l,\frac{l+r}{2}]</script></span> and <span><span class="MathJax_Preview">[\frac{l+r}{2},r]</span><script type="math/tex">[\frac{l+r}{2},r]</script></span> has <span><span class="MathJax_Preview">a_n</span><script type="math/tex">a_n</script></span> infinitely many times. Thus we can take <span><span class="MathJax_Preview">n_2&gt;n_1</span><script type="math/tex">n_2>n_1</script></span> from which, keep this procedure.</p>
+<p><span><span class="MathJax_Preview">(l_n), (r_n)</span><script type="math/tex">(l_n), (r_n)</script></span> both monotone thus convergent, and <span><span class="MathJax_Preview">(r_n-l_n)</span><script type="math/tex">(r_n-l_n)</script></span> limits 0.
+By sequeeze, <span><span class="MathJax_Preview">(a_{n_i})</span><script type="math/tex">(a_{n_i})</script></span> converge.<span><span class="MathJax_Preview">\square</span><script type="math/tex">\square</script></span></p>
+</details>
+<h2 id="cauchy-condition">Cauchy Condition<a class="headerlink" href="#cauchy-condition" title="Permanent link">&para;</a></h2>
+<p><span><span class="MathJax_Preview">\forall \varepsilon&gt;0, \exists N&gt;0</span><script type="math/tex">\forall \varepsilon>0, \exists N>0</script></span> s.t. if <span><span class="MathJax_Preview">m,n\geq N</span><script type="math/tex">m,n\geq N</script></span>, then <span><span class="MathJax_Preview">|a_m-a_n|&lt;\varepsilon</span><script type="math/tex">|a_m-a_n|<\varepsilon</script></span>.</p>
+<h3 id="theorem_5">Theorem<a class="headerlink" href="#theorem_5" title="Permanent link">&para;</a></h3>
+<p>convergent <span><span class="MathJax_Preview">\Leftrightarrow</span><script type="math/tex">\Leftrightarrow</script></span> Cauchy.</p>
+<details><summary>Proof</summary><p><span><span class="MathJax_Preview">\Rightarrow</span><script type="math/tex">\Rightarrow</script></span>.</p>
+<p>take radius <span><span class="MathJax_Preview">\varepsilon/2</span><script type="math/tex">\varepsilon/2</script></span> of limit, thus <span><span class="MathJax_Preview">|a_m-a_n|&lt;\varepsilon</span><script type="math/tex">|a_m-a_n|<\varepsilon</script></span>.</p>
+<p><span><span class="MathJax_Preview">\Leftarrow</span><script type="math/tex">\Leftarrow</script></span>.</p>
+<p>let <span><span class="MathJax_Preview">\varepsilon=1</span><script type="math/tex">\varepsilon=1</script></span>, thus <span><span class="MathJax_Preview">(a_n)</span><script type="math/tex">(a_n)</script></span> is bounded by <span><span class="MathJax_Preview">\max{|a_1|,\cdots, |a_{N-1}|, 1+|a_{N}|}</span><script type="math/tex">\max{|a_1|,\cdots, |a_{N-1}|, 1+|a_{N}|}</script></span>. By <a href="#bolzanoweierstrass-theorem">B-W</a>, <span><span class="MathJax_Preview">(a_{n_i})</span><script type="math/tex">(a_{n_i})</script></span> converge to some <span><span class="MathJax_Preview">L</span><script type="math/tex">L</script></span>.</p>
+<p>Then take <span><span class="MathJax_Preview">(N,\varepsilon/2)</span><script type="math/tex">(N,\varepsilon/2)</script></span> of Cauchy, and <span><span class="MathJax_Preview">(N_2,\varepsilon/2)</span><script type="math/tex">(N_2,\varepsilon/2)</script></span> of convergent <span><span class="MathJax_Preview">(a_{n_i})</span><script type="math/tex">(a_{n_i})</script></span>.</p>
+<p>Choose <span><span class="MathJax_Preview">K\geq N_2</span><script type="math/tex">K\geq N_2</script></span> and <span><span class="MathJax_Preview">n_K \geq N</span><script type="math/tex">n_K \geq N</script></span>, thus if <span><span class="MathJax_Preview">n\geq N</span><script type="math/tex">n\geq N</script></span></p>
+<p>$$
+    |a_n-L| \leq |a_n - a_{n_K}| + |a_{n_K} - L| &lt; \varepsilon/2 + \varepsilon/2 = \varepsilon
+$$ <span><span class="MathJax_Preview">\square</span><script type="math/tex">\square</script></span></p>
+</details>
+<h2 id="lim-sup">lim sup<a class="headerlink" href="#lim-sup" title="Permanent link">&para;</a></h2>
+<h3 id="definition_3">Definition<a class="headerlink" href="#definition_3" title="Permanent link">&para;</a></h3>
+<p><span><span class="MathJax_Preview">\limsup a_n=</span><script type="math/tex">\limsup a_n=</script></span></p>
+<ul>
+<li><span><span class="MathJax_Preview">\lim_{n\rightarrow\infty} \sup_{m\geq n} a_m</span><script type="math/tex">\lim_{n\rightarrow\infty} \sup_{m\geq n} a_m</script></span></li>
+<li><span><span class="MathJax_Preview">\inf_{n\geq 1} \sup_{m\geq n} a_m</span><script type="math/tex">\inf_{n\geq 1} \sup_{m\geq n} a_m</script></span></li>
+<li><span><span class="MathJax_Preview">\sup E</span><script type="math/tex">\sup E</script></span>, where <span><span class="MathJax_Preview">E</span><script type="math/tex">E</script></span> is set of limit points of convergent subsequence of <span><span class="MathJax_Preview">(a_n)</span><script type="math/tex">(a_n)</script></span>.</li>
+</ul>
+<blockquote>
+<p>Limit of "tail boarder".</p>
+</blockquote>
+<h3 id="theorem_6">Theorem<a class="headerlink" href="#theorem_6" title="Permanent link">&para;</a></h3>
+<p><span><span class="MathJax_Preview">(a_n),(b_n)</span><script type="math/tex">(a_n),(b_n)</script></span> are bounded, then
+$$
+\liminf a_n + \liminf b_n \leq \liminf(a_n+b_n), \limsup(a_n+b_n) \leq \limsup a_n + \limsup b_n
+$$</p>
+<details><summary>Proof</summary><p>Note <span><span class="MathJax_Preview">\forall n &gt; 0</span><script type="math/tex">\forall n > 0</script></span>
+$$
+\inf_{m\geq n} a_m \leq a_k \leq \sup_{m\geq n} a_m, \forall k\geq n
+$$
+thus
+$$
+\inf_{\geq n} a + \inf_{\geq n} b \leq a_k + b_k \leq \sup_{\geq n} a + \sup_{\geq n} b, \forall k\geq n
+$$
+take <span><span class="MathJax_Preview">\inf</span><script type="math/tex">\inf</script></span> or <span><span class="MathJax_Preview">\sup</span><script type="math/tex">\sup</script></span> on middle to get
+\begin{align}
+\inf_{\geq n} a + \inf_{\geq n} b \leq \inf_{\geq n} (a+b) \\
+\sup_{\geq n} (a+b) \leq \sup_{\geq n} a + \sup_{\geq n} b
+\end{align}
+as <span><span class="MathJax_Preview">n\rightarrow\infty.\square</span><script type="math/tex">n\rightarrow\infty.\square</script></span></p>
+</details>
+<blockquote>
+<p>For any tail, each point under "tail boarder", thus sum of two still under.</p>
+</blockquote>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="countable.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Countable" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Countable
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="series.html" class="md-footer__link md-footer__link--next" aria-label="Next: Series" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Series
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.477d984a.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.ddd52ceb.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
