@@ -8,6 +8,13 @@ repo_url: 'https://github.com/sogapalag/prob.stats'
 nav:
   - Introduction:
       - Intro: index.md
+  - Analysis:
+      - Intro: analysis/index.md
+      - Countable: analysis/countable.md
+      - Sequence: analysis/sequence.md
+      - Series: analysis/series.md
+      - Function: analysis/function.md
+      - Metric: analysis/metric.md
 
 
 theme:
@@ -56,6 +63,7 @@ markdown_extensions:
   - pymdownx.progressbar
   - pymdownx.smartsymbols
   - pymdownx.arithmatex
+  - pymdownx.snippets
   - pymdownx.superfences:
       custom_fences:
         - name: math
