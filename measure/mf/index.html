@@ -1,0 +1,1573 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Notes of Probability & Statistics.">
+      
+      
+      
+        <meta name="author" content="Zhaopeng Yan">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.0">
+    
+    
+      
+        <title>Measurable function - prob.stats</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.fe914879.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ba0d045b.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#ffffff">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,400i,700%7CFira+Code&display=fallback">
+        <style>:root{--md-text-font-family:"Fira Sans";--md-code-font-family:"Fira Code"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="white" data-md-color-accent="pink">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#definition" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="prob.stats" class="md-header__button md-logo" aria-label="prob.stats" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            prob.stats
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Measurable function
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/sogapalag/prob.stats/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    sogapalag/prob.stats
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        Introduction
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../analysis/" class="md-tabs__link">
+        Analysis
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
+        Measure
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../models/" class="md-tabs__link">
+        Models
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="prob.stats" class="md-nav__button md-logo" aria-label="prob.stats" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+
+    </a>
+    prob.stats
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/sogapalag/prob.stats/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    sogapalag/prob.stats
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      <label class="md-nav__link" for="__nav_1">
+        Introduction
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Introduction" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Introduction
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Intro
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Analysis
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Analysis" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Analysis
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analysis/" class="md-nav__link">
+        Intro
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analysis/countable/" class="md-nav__link">
+        Countable
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analysis/sequence/" class="md-nav__link">
+        Sequence
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analysis/series/" class="md-nav__link">
+        Series
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analysis/function/" class="md-nav__link">
+        Function
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analysis/metric/" class="md-nav__link">
+        Metric
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3">
+        Measure
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Measure" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Measure
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Intro
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sigma/" class="md-nav__link">
+        Sigma
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Measurable function
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Measurable function
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#definition" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convergence" class="md-nav__link">
+    Convergence
+  </a>
+  
+    <nav class="md-nav" aria-label="Convergence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#theorem" class="md-nav__link">
+    Theorem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#theorem_1" class="md-nav__link">
+    Theorem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-of-convergence" class="md-nav__link">
+    Type of convergence
+  </a>
+  
+    <nav class="md-nav" aria-label="Type of convergence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#relationship" class="md-nav__link">
+    Relationship
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monotone-convergence-theorem" class="md-nav__link">
+    Monotone convergence theorem
+  </a>
+  
+    <nav class="md-nav" aria-label="Monotone convergence theorem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general" class="md-nav__link">
+    general
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fatous-lemma" class="md-nav__link">
+    Fatou's lemma
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dominated-convergence-theorem" class="md-nav__link">
+    Dominated convergence theorem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scheffes-lemma" class="md-nav__link">
+    Scheffe's lemma
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ui" class="md-nav__link">
+    U.I.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vitalis-convergence-theorem" class="md-nav__link">
+    Vitali's convergence theorem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standard-machine" class="md-nav__link">
+    Standard machine
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#definition_1" class="md-nav__link">
+    Definition
+  </a>
+  
+    <nav class="md-nav" aria-label="Definition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#distribution" class="md-nav__link">
+    distribution
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdf" class="md-nav__link">
+    pdf
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p-trivial" class="md-nav__link">
+    P-trivial
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expectation" class="md-nav__link">
+    expectation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#independence" class="md-nav__link">
+    Independence
+  </a>
+  
+    <nav class="md-nav" aria-label="Independence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#p-mutually-independent" class="md-nav__link">
+    P-mutually independent
+  </a>
+  
+    <nav class="md-nav" aria-label="P-mutually independent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#theorem_2" class="md-nav__link">
+    Theorem
+  </a>
+  
+    <nav class="md-nav" aria-label="Theorem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#corollary" class="md-nav__link">
+    Corollary
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#theorem_3" class="md-nav__link">
+    Theorem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lemma" class="md-nav__link">
+    Lemma
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kolmogorovs-0-1-law" class="md-nav__link">
+    Kolmogorov's 0-1 law
+  </a>
+  
+    <nav class="md-nav" aria-label="Kolmogorov's 0-1 law">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proof" class="md-nav__link">
+    Proof
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#product" class="md-nav__link">
+    Product
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inequal/" class="md-nav__link">
+        Inequalities
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lln/" class="md-nav__link">
+        Law of large numbers
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../clt/" class="md-nav__link">
+        Central limit theorem
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cf/" class="md-nav__link">
+        Characteristic function
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ce/" class="md-nav__link">
+        Conditional expectation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_9" type="checkbox" id="__nav_3_9" >
+      
+      <label class="md-nav__link" for="__nav_3_9">
+        Martingale and stopping times
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Martingale and stopping times" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_9">
+          <span class="md-nav__icon md-icon"></span>
+          Martingale and stopping times
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../martingale/def/" class="md-nav__link">
+        Definitions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../martingale/ddecomp/" class="md-nav__link">
+        Doob's decomposition theorem
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../martingale/dct/" class="md-nav__link">
+        Doob's convergence theorem
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../martingale/ost/" class="md-nav__link">
+        Doob's optional stopping theorem
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../martingale/branch/" class="md-nav__link">
+        Branching process
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../martingale/rev/" class="md-nav__link">
+        Reversed martingale
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../martingale/exc/" class="md-nav__link">
+        Exchangeable
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../markov/" class="md-nav__link">
+        Markov chain
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Models
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Models" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Models
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../models/" class="md-nav__link">
+        Intro
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../models/reflection/" class="md-nav__link">
+        Reflection principle
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../models/polya_urn/" class="md-nav__link">
+        Pólya's urn
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../models/gamblers_ruin/" class="md-nav__link">
+        Gambler's ruin
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../models/ballot/" class="md-nav__link">
+        Bertrand's ballot
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#definition" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convergence" class="md-nav__link">
+    Convergence
+  </a>
+  
+    <nav class="md-nav" aria-label="Convergence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#theorem" class="md-nav__link">
+    Theorem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#theorem_1" class="md-nav__link">
+    Theorem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-of-convergence" class="md-nav__link">
+    Type of convergence
+  </a>
+  
+    <nav class="md-nav" aria-label="Type of convergence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#relationship" class="md-nav__link">
+    Relationship
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monotone-convergence-theorem" class="md-nav__link">
+    Monotone convergence theorem
+  </a>
+  
+    <nav class="md-nav" aria-label="Monotone convergence theorem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general" class="md-nav__link">
+    general
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fatous-lemma" class="md-nav__link">
+    Fatou's lemma
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dominated-convergence-theorem" class="md-nav__link">
+    Dominated convergence theorem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scheffes-lemma" class="md-nav__link">
+    Scheffe's lemma
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ui" class="md-nav__link">
+    U.I.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vitalis-convergence-theorem" class="md-nav__link">
+    Vitali's convergence theorem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standard-machine" class="md-nav__link">
+    Standard machine
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#definition_1" class="md-nav__link">
+    Definition
+  </a>
+  
+    <nav class="md-nav" aria-label="Definition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#distribution" class="md-nav__link">
+    distribution
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdf" class="md-nav__link">
+    pdf
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p-trivial" class="md-nav__link">
+    P-trivial
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expectation" class="md-nav__link">
+    expectation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#independence" class="md-nav__link">
+    Independence
+  </a>
+  
+    <nav class="md-nav" aria-label="Independence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#p-mutually-independent" class="md-nav__link">
+    P-mutually independent
+  </a>
+  
+    <nav class="md-nav" aria-label="P-mutually independent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#theorem_2" class="md-nav__link">
+    Theorem
+  </a>
+  
+    <nav class="md-nav" aria-label="Theorem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#corollary" class="md-nav__link">
+    Corollary
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#theorem_3" class="md-nav__link">
+    Theorem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lemma" class="md-nav__link">
+    Lemma
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kolmogorovs-0-1-law" class="md-nav__link">
+    Kolmogorov's 0-1 law
+  </a>
+  
+    <nav class="md-nav" aria-label="Kolmogorov's 0-1 law">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proof" class="md-nav__link">
+    Proof
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#product" class="md-nav__link">
+    Product
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/sogapalag/prob.stats/edit/master/docs/measure/mf.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  <h1>Measurable function</h1>
+                
+                <h2 id="definition">Definition<a class="headerlink" href="#definition" title="Permanent link">&para;</a></h2>
+<p>Mapping between two measurable spaces <span><span class="MathJax_Preview">(\Omega, \mathcal{F}), (\mathbb{S},\mathcal{S})</span><script type="math/tex">(\Omega, \mathcal{F}), (\mathbb{S},\mathcal{S})</script></span>, also called measurable mapping, Borel function <span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span>, random variable(R.V.) <span><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span>, if <span><span class="MathJax_Preview">\forall B\in \mathcal{S}</span><script type="math/tex">\forall B\in \mathcal{S}</script></span></p>
+<div>
+<div class="MathJax_Preview">
+  X^{-1}(B):= \{A:X(A)\in B\} \in\mathcal{F}
+</div>
+<script type="math/tex; mode=display">
+  X^{-1}(B):= \{A:X(A)\in B\} \in\mathcal{F}
+</script>
+</div>
+<blockquote>
+<p>i.e. contain preimage.</p>
+</blockquote>
+<h2 id="convergence">Convergence<a class="headerlink" href="#convergence" title="Permanent link">&para;</a></h2>
+<h3 id="theorem">Theorem<a class="headerlink" href="#theorem" title="Permanent link">&para;</a></h3>
+<div>
+<div class="MathJax_Preview">
+ \rightarrow\overline{\mathbb{R}}, f_n\in mF \Rightarrow \sup_n f_n,\inf_n f_n, \limsup_{n\rightarrow\infty}f_n,\liminf f_n \in mF
+</div>
+<script type="math/tex; mode=display">
+ \rightarrow\overline{\mathbb{R}}, f_n\in mF \Rightarrow \sup_n f_n,\inf_n f_n, \limsup_{n\rightarrow\infty}f_n,\liminf f_n \in mF
+</script>
+</div>
+<h3 id="theorem_1">Theorem<a class="headerlink" href="#theorem_1" title="Permanent link">&para;</a></h3>
+<p>For any sequence <span><span class="MathJax_Preview">f_n</span><script type="math/tex">f_n</script></span></p>
+<div>
+<div class="MathJax_Preview">
+  \Omega_0:=\{ \omega:\liminf f = \limsup f \} \\\\
+  \Omega_1:=\{ \omega:\liminf f = \limsup f \in \mathbb{R}\}
+</div>
+<script type="math/tex; mode=display">
+  \Omega_0:=\{ \omega:\liminf f = \limsup f \} \\\\
+  \Omega_1:=\{ \omega:\liminf f = \limsup f \in \mathbb{R}\}
+</script>
+</div>
+<p>are measurable, i.e. <span><span class="MathJax_Preview">\Omega_0,\Omega_1 \in F</span><script type="math/tex">\Omega_0,\Omega_1 \in F</script></span>.</p>
+<blockquote>
+<p>set converge to <span><span class="MathJax_Preview">\infty</span><script type="math/tex">\infty</script></span> or finite limit.</p>
+</blockquote>
+<h3 id="type-of-convergence">Type of convergence<a class="headerlink" href="#type-of-convergence" title="Permanent link">&para;</a></h3>
+<ul>
+<li>pointwise convergence: <span><span class="MathJax_Preview">f_n(\omega)\rightarrow f(\omega)</span><script type="math/tex">f_n(\omega)\rightarrow f(\omega)</script></span>.</li>
+<li>a.s. convergence: <span><span class="MathJax_Preview">f_n \xrightarrow{a.s.}f</span><script type="math/tex">f_n \xrightarrow{a.s.}f</script></span>, <span><span class="MathJax_Preview">P(\Omega_0)</span><script type="math/tex">P(\Omega_0)</script></span> w.p.1.<ul>
+<li><span><span class="MathJax_Preview">P(X_n\rightarrow X)=1</span><script type="math/tex">P(X_n\rightarrow X)=1</script></span></li>
+<li>a.s. convergence to finite limit: <span><span class="MathJax_Preview">P(\Omega_1)</span><script type="math/tex">P(\Omega_1)</script></span> w.p.1.</li>
+</ul>
+</li>
+<li>convergence in probability: <span><span class="MathJax_Preview">f_n \xrightarrow{p}f</span><script type="math/tex">f_n \xrightarrow{p}f</script></span><ul>
+<li><span><span class="MathJax_Preview">\forall \varepsilon&gt;0</span><script type="math/tex">\forall \varepsilon>0</script></span>, <span><span class="MathJax_Preview">P(x:|f_n(x)-f(x)|&gt;\varepsilon)\rightarrow 0</span><script type="math/tex">P(x:|f_n(x)-f(x)|>\varepsilon)\rightarrow 0</script></span>.</li>
+</ul>
+</li>
+<li>convergence in <span><span class="MathJax_Preview">L^p</span><script type="math/tex">L^p</script></span>: <span><span class="MathJax_Preview">f_n\xrightarrow{L^p}f</span><script type="math/tex">f_n\xrightarrow{L^p}f</script></span><ul>
+<li><span><span class="MathJax_Preview">f_n,f\in L^p</span><script type="math/tex">f_n,f\in L^p</script></span>, <span><span class="MathJax_Preview">\|f_n-f\|_p\rightarrow 0</span><script type="math/tex">\|f_n-f\|_p\rightarrow 0</script></span>.</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>(a.e.) pointwise is strong;
+a.s. means eventually, <span><span class="MathJax_Preview">P(\lim)</span><script type="math/tex">P(\lim)</script></span>; in probability, <span><span class="MathJax_Preview">\lim(P)</span><script type="math/tex">\lim(P)</script></span>.</p>
+</blockquote>
+<h4 id="relationship">Relationship<a class="headerlink" href="#relationship" title="Permanent link">&para;</a></h4>
+<div>
+<div class="MathJax_Preview">\begin{align}
+\xrightarrow{a.s.} &amp;\Rightarrow \xrightarrow{p} \\\\
+\xrightarrow{L^p},p\geq r &amp;\Rightarrow \xrightarrow{L^r} \\\\
+\xrightarrow{L^p} &amp;\Rightarrow \xrightarrow{p}
+\end{align}</div>
+<script type="math/tex; mode=display">\begin{align}
+\xrightarrow{a.s.} &\Rightarrow \xrightarrow{p} \\\\
+\xrightarrow{L^p},p\geq r &\Rightarrow \xrightarrow{L^r} \\\\
+\xrightarrow{L^p} &\Rightarrow \xrightarrow{p}
+\end{align}</script>
+</div>
+<p>More properties on <a href="https://en.wikipedia.org/wiki/Convergence_of_random_variables#Properties_4">wiki</a>.</p>
+<h3 id="monotone-convergence-theorem">Monotone convergence theorem<a class="headerlink" href="#monotone-convergence-theorem" title="Permanent link">&para;</a></h3>
+<p><span><span class="MathJax_Preview">f_n\geq 0</span><script type="math/tex">f_n\geq 0</script></span> pointwise converge, then <span><span class="MathJax_Preview">\mu(f_n)\uparrow \mu(f)\leq \infty</span><script type="math/tex">\mu(f_n)\uparrow \mu(f)\leq \infty</script></span>.</p>
+<h4 id="general">general<a class="headerlink" href="#general" title="Permanent link">&para;</a></h4>
+<p><span><span class="MathJax_Preview">f_n\geq 0</span><script type="math/tex">f_n\geq 0</script></span>, <span><span class="MathJax_Preview">f_n\uparrow f</span><script type="math/tex">f_n\uparrow f</script></span> a.e., then <span><span class="MathJax_Preview">Ef_n\uparrow Ef</span><script type="math/tex">Ef_n\uparrow Ef</script></span>.</p>
+<h3 id="fatous-lemma">Fatou's lemma<a class="headerlink" href="#fatous-lemma" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>bridge <span><span class="MathJax_Preview">\limsup,\liminf</span><script type="math/tex">\limsup,\liminf</script></span> on a.s. measure sense.</p>
+</blockquote>
+<h3 id="dominated-convergence-theorem">Dominated convergence theorem<a class="headerlink" href="#dominated-convergence-theorem" title="Permanent link">&para;</a></h3>
+<h3 id="scheffes-lemma">Scheffe's lemma<a class="headerlink" href="#scheffes-lemma" title="Permanent link">&para;</a></h3>
+<h3 id="ui">U.I.<a class="headerlink" href="#ui" title="Permanent link">&para;</a></h3>
+<h3 id="vitalis-convergence-theorem">Vitali's convergence theorem<a class="headerlink" href="#vitalis-convergence-theorem" title="Permanent link">&para;</a></h3>
+<h3 id="standard-machine">Standard machine<a class="headerlink" href="#standard-machine" title="Permanent link">&para;</a></h3>
+<p>Steps to prove some property hold <span><span class="MathJax_Preview">h\in L^1</span><script type="math/tex">h\in L^1</script></span>.</p>
+<ol>
+<li>prove indicator.</li>
+<li>by linearity, extent to <span><span class="MathJax_Preview">SF_+</span><script type="math/tex">SF_+</script></span></li>
+<li>by MON thm, extent to <span><span class="MathJax_Preview">mF_+</span><script type="math/tex">mF_+</script></span></li>
+<li><span><span class="MathJax_Preview">h=h_+-h_-</span><script type="math/tex">h=h_+-h_-</script></span>, extent to <span><span class="MathJax_Preview">L^1</span><script type="math/tex">L^1</script></span></li>
+</ol>
+<h2 id="definition_1">Definition<a class="headerlink" href="#definition_1" title="Permanent link">&para;</a></h2>
+<h3 id="distribution">distribution<a class="headerlink" href="#distribution" title="Permanent link">&para;</a></h3>
+<p><span><span class="MathJax_Preview">F:\mathbb{R}\rightarrow [0,1]</span><script type="math/tex">F:\mathbb{R}\rightarrow [0,1]</script></span> is distribution of some R.V. iff</p>
+<ol>
+<li><span><span class="MathJax_Preview">\nearrow</span><script type="math/tex">\nearrow</script></span>.<ul>
+<li>imply a.s. differentiable.</li>
+</ul>
+</li>
+<li><span><span class="MathJax_Preview">\lim_{x\rightarrow\infty} F(x)=1</span><script type="math/tex">\lim_{x\rightarrow\infty} F(x)=1</script></span> and <span><span class="MathJax_Preview">\lim_{x\rightarrow -\infty} F(x)= 0</span><script type="math/tex">\lim_{x\rightarrow -\infty} F(x)= 0</script></span></li>
+<li>right-continous: <span><span class="MathJax_Preview">\lim_{x\downarrow a}F(x)=F(a)</span><script type="math/tex">\lim_{x\downarrow a}F(x)=F(a)</script></span></li>
+</ol>
+<h3 id="pdf">pdf<a class="headerlink" href="#pdf" title="Permanent link">&para;</a></h3>
+<div>
+<div class="MathJax_Preview">
+ F_X(x)=\int_{-\infty}^xf_X(t)dt, \forall x\in \mathbb{R}
+</div>
+<script type="math/tex; mode=display">
+ F_X(x)=\int_{-\infty}^xf_X(t)dt, \forall x\in \mathbb{R}
+</script>
+</div>
+<h3 id="p-trivial">P-trivial<a class="headerlink" href="#p-trivial" title="Permanent link">&para;</a></h3>
+<p>either <span><span class="MathJax_Preview">P(A)=0</span><script type="math/tex">P(A)=0</script></span> or <span><span class="MathJax_Preview">P(A^c)=0</span><script type="math/tex">P(A^c)=0</script></span>.</p>
+<h3 id="expectation">expectation<a class="headerlink" href="#expectation" title="Permanent link">&para;</a></h3>
+<div>
+<div class="MathJax_Preview">
+ E[X]=\int XdP
+</div>
+<script type="math/tex; mode=display">
+ E[X]=\int XdP
+</script>
+</div>
+<p><a href="https://en.wikipedia.org/wiki/Lp_space#Lp_spaces_and_Lebesgue_integrals">Wiki</a> of Lebesgue integral, <span><span class="MathJax_Preview">L^p</span><script type="math/tex">L^p</script></span>.</p>
+<h2 id="independence">Independence<a class="headerlink" href="#independence" title="Permanent link">&para;</a></h2>
+<ul>
+<li>classic: <span><span class="MathJax_Preview">P(A\cap B)=P(A)P(B)</span><script type="math/tex">P(A\cap B)=P(A)P(B)</script></span>.</li>
+<li><span><span class="MathJax_Preview">\sigma</span><script type="math/tex">\sigma</script></span>-algebra.</li>
+<li>R.V.s:<span><span class="MathJax_Preview">\sigma(X)</span><script type="math/tex">\sigma(X)</script></span> indep. <span><span class="MathJax_Preview">\sigma(Y)</span><script type="math/tex">\sigma(Y)</script></span></li>
+</ul>
+<h3 id="p-mutually-independent">P-mutually independent<a class="headerlink" href="#p-mutually-independent" title="Permanent link">&para;</a></h3>
+<p>A collection of events <span><span class="MathJax_Preview">A_\alpha\subseteq\mathcal{F}</span><script type="math/tex">A_\alpha\subseteq\mathcal{F}</script></span> is P-m.indep. if for any <span><span class="MathJax_Preview">L &lt; \infty</span><script type="math/tex">L < \infty</script></span> distinct indices</p>
+<div>
+<div class="MathJax_Preview">
+  P(\bigcap^L A_i) = \prod^L P(A_i)
+</div>
+<script type="math/tex; mode=display">
+  P(\bigcap^L A_i) = \prod^L P(A_i)
+</script>
+</div>
+<ul>
+<li>R.V.s: generated Borel.</li>
+</ul>
+<h4 id="theorem_2">Theorem<a class="headerlink" href="#theorem_2" title="Permanent link">&para;</a></h4>
+<p><em>Finite</em> P-m.indep. <span><span class="MathJax_Preview">\pi</span><script type="math/tex">\pi</script></span>-system <span><span class="MathJax_Preview">\Rightarrow</span><script type="math/tex">\Rightarrow</script></span> <span><span class="MathJax_Preview">\sigma (\pi_n)</span><script type="math/tex">\sigma (\pi_n)</script></span> are P-m.indep.</p>
+<h5 id="corollary">Corollary<a class="headerlink" href="#corollary" title="Permanent link">&para;</a></h5>
+<p>Above hold even for <em>uncountably infinite</em>.</p>
+<blockquote>
+<p>Since P-m.indep. condition only check finite <span><span class="MathJax_Preview">L</span><script type="math/tex">L</script></span>.</p>
+</blockquote>
+<h3 id="theorem_3">Theorem<a class="headerlink" href="#theorem_3" title="Permanent link">&para;</a></h3>
+<p><span><span class="MathJax_Preview">\mathcal{F}_n^X</span><script type="math/tex">\mathcal{F}_n^X</script></span>,<span><span class="MathJax_Preview">\sigma(X_{n+1})</span><script type="math/tex">\sigma(X_{n+1})</script></span> P-m.indep. <span><span class="MathJax_Preview">\forall n</span><script type="math/tex">\forall n</script></span> <span><span class="MathJax_Preview">\Rightarrow</span><script type="math/tex">\Rightarrow</script></span> <span><span class="MathJax_Preview">X_1,X_2,\cdots</span><script type="math/tex">X_1,X_2,\cdots</script></span> P-m.indep. <span><span class="MathJax_Preview">\Rightarrow</span><script type="math/tex">\Rightarrow</script></span> <span><span class="MathJax_Preview">\mathcal{F}_n^X</span><script type="math/tex">\mathcal{F}_n^X</script></span>,<span><span class="MathJax_Preview">\mathcal{T}_n^X</span><script type="math/tex">\mathcal{T}_n^X</script></span> P-m.indep.</p>
+<h3 id="lemma">Lemma<a class="headerlink" href="#lemma" title="Permanent link">&para;</a></h3>
+<p>if <span><span class="MathJax_Preview">\sigma</span><script type="math/tex">\sigma</script></span>-algebras <span><span class="MathJax_Preview">\mathcal{G}_n\uparrow \mathcal{G}</span><script type="math/tex">\mathcal{G}_n\uparrow \mathcal{G}</script></span>, each indep. with a <span><span class="MathJax_Preview">\sigma</span><script type="math/tex">\sigma</script></span>-algebra <span><span class="MathJax_Preview">\mathcal{H}\subseteq \sigma(\mathcal{G})</span><script type="math/tex">\mathcal{H}\subseteq \sigma(\mathcal{G})</script></span>, then <span><span class="MathJax_Preview">\mathcal{H}</span><script type="math/tex">\mathcal{H}</script></span> is P-trivial.</p>
+<h3 id="kolmogorovs-0-1-law">Kolmogorov's 0-1 law<a class="headerlink" href="#kolmogorovs-0-1-law" title="Permanent link">&para;</a></h3>
+<p>P-m.indep. S.P. <span><span class="MathJax_Preview">\{X_k\}</span><script type="math/tex">\{X_k\}</script></span> <span><span class="MathJax_Preview">\Rightarrow</span><script type="math/tex">\Rightarrow</script></span> <span><span class="MathJax_Preview">\mathcal{T}^X</span><script type="math/tex">\mathcal{T}^X</script></span> is P-trivial.</p>
+<h4 id="proof">Proof<a class="headerlink" href="#proof" title="Permanent link">&para;</a></h4>
+<p><span><span class="MathJax_Preview">A\in T^X\subseteq T_n^X</span><script type="math/tex">A\in T^X\subseteq T_n^X</script></span> imply <span><span class="MathJax_Preview">T^X</span><script type="math/tex">T^X</script></span>, <span><span class="MathJax_Preview">F_n^X</span><script type="math/tex">F_n^X</script></span> indep. Then by above lemma proved.<span><span class="MathJax_Preview">\square</span><script type="math/tex">\square</script></span></p>
+<h2 id="product">Product<a class="headerlink" href="#product" title="Permanent link">&para;</a></h2>
+<p>Kolmogorov's extension theorem</p>
+<blockquote>
+<p>unique consistent probability measure.</p>
+</blockquote>
+<p>Fubini theorem</p>
+<blockquote>
+<p>ensure integral by parts</p>
+</blockquote>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../sigma/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Sigma" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Sigma
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../inequal/" class="md-footer__link md-footer__link--next" aria-label="Next: Inequalities" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Inequalities
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.53c85856.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.716f8af4.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>

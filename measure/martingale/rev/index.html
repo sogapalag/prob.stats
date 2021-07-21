@@ -13,19 +13,19 @@
         <meta name="author" content="Zhaopeng Yan">
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.0">
     
     
       
-        <title>Intro - prob.stats</title>
+        <title>Reversed martingale - prob.stats</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.fe914879.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.fe914879.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.ba0d045b.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ba0d045b.min.css">
         
           
           
@@ -61,7 +61,7 @@
     <body dir="ltr" data-md-color-scheme="" data-md-color-primary="white" data-md-color-accent="pink">
   
     
-    <script>function __prefix(e){return new URL(".",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#welcome-to-mkdocs" class="md-skip">
+        <a href="#rmg" class="md-skip">
           Skip to content
         </a>
       
@@ -80,7 +80,7 @@
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="prob.stats" class="md-header__button md-logo" aria-label="prob.stats" data-md-component="logo">
+    <a href="../../.." title="prob.stats" class="md-header__button md-logo" aria-label="prob.stats" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Intro
+              Reversed martingale
             
           </span>
         </div>
@@ -171,15 +171,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="." class="md-tabs__link md-tabs__link--active">
+      <a href="../../.." class="md-tabs__link">
         Introduction
       </a>
     </li>
@@ -195,7 +193,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="analysis/" class="md-tabs__link">
+      <a href="../../../analysis/" class="md-tabs__link">
         Analysis
       </a>
     </li>
@@ -205,13 +203,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="measure/" class="md-tabs__link">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
         Measure
       </a>
     </li>
@@ -227,7 +227,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="models/" class="md-tabs__link">
+      <a href="../../../models/" class="md-tabs__link">
         Models
       </a>
     </li>
@@ -254,7 +254,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="prob.stats" class="md-nav__button md-logo" aria-label="prob.stats" data-md-component="logo">
+    <a href="../../.." title="prob.stats" class="md-nav__button md-logo" aria-label="prob.stats" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
@@ -284,14 +284,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
       
       <label class="md-nav__link" for="__nav_1">
         Introduction
@@ -307,58 +305,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Intro
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
         Intro
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#commands" class="md-nav__link">
-    Commands
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#project-layout" class="md-nav__link">
-    Project layout
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -398,7 +349,7 @@
   
   
     <li class="md-nav__item">
-      <a href="analysis/" class="md-nav__link">
+      <a href="../../../analysis/" class="md-nav__link">
         Intro
       </a>
     </li>
@@ -410,7 +361,7 @@
   
   
     <li class="md-nav__item">
-      <a href="analysis/countable/" class="md-nav__link">
+      <a href="../../../analysis/countable/" class="md-nav__link">
         Countable
       </a>
     </li>
@@ -422,7 +373,7 @@
   
   
     <li class="md-nav__item">
-      <a href="analysis/sequence/" class="md-nav__link">
+      <a href="../../../analysis/sequence/" class="md-nav__link">
         Sequence
       </a>
     </li>
@@ -434,7 +385,7 @@
   
   
     <li class="md-nav__item">
-      <a href="analysis/series/" class="md-nav__link">
+      <a href="../../../analysis/series/" class="md-nav__link">
         Series
       </a>
     </li>
@@ -446,7 +397,7 @@
   
   
     <li class="md-nav__item">
-      <a href="analysis/function/" class="md-nav__link">
+      <a href="../../../analysis/function/" class="md-nav__link">
         Function
       </a>
     </li>
@@ -458,7 +409,7 @@
   
   
     <li class="md-nav__item">
-      <a href="analysis/metric/" class="md-nav__link">
+      <a href="../../../analysis/metric/" class="md-nav__link">
         Metric
       </a>
     </li>
@@ -477,12 +428,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       <label class="md-nav__link" for="__nav_3">
         Measure
@@ -500,7 +453,7 @@
   
   
     <li class="md-nav__item">
-      <a href="measure/" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         Intro
       </a>
     </li>
@@ -512,7 +465,7 @@
   
   
     <li class="md-nav__item">
-      <a href="measure/sigma/" class="md-nav__link">
+      <a href="../../sigma/" class="md-nav__link">
         Sigma
       </a>
     </li>
@@ -524,7 +477,7 @@
   
   
     <li class="md-nav__item">
-      <a href="measure/mf/" class="md-nav__link">
+      <a href="../../mf/" class="md-nav__link">
         Measurable function
       </a>
     </li>
@@ -536,7 +489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="measure/inequal/" class="md-nav__link">
+      <a href="../../inequal/" class="md-nav__link">
         Inequalities
       </a>
     </li>
@@ -548,7 +501,7 @@
   
   
     <li class="md-nav__item">
-      <a href="measure/lln/" class="md-nav__link">
+      <a href="../../lln/" class="md-nav__link">
         Law of large numbers
       </a>
     </li>
@@ -560,7 +513,7 @@
   
   
     <li class="md-nav__item">
-      <a href="measure/clt/" class="md-nav__link">
+      <a href="../../clt/" class="md-nav__link">
         Central limit theorem
       </a>
     </li>
@@ -572,7 +525,7 @@
   
   
     <li class="md-nav__item">
-      <a href="measure/cf/" class="md-nav__link">
+      <a href="../../cf/" class="md-nav__link">
         Characteristic function
       </a>
     </li>
@@ -584,7 +537,7 @@
   
   
     <li class="md-nav__item">
-      <a href="measure/ce/" class="md-nav__link">
+      <a href="../../ce/" class="md-nav__link">
         Conditional expectation
       </a>
     </li>
@@ -594,12 +547,14 @@
             
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_9" type="checkbox" id="__nav_3_9" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_9" type="checkbox" id="__nav_3_9" checked>
       
       <label class="md-nav__link" for="__nav_3_9">
         Martingale and stopping times
@@ -617,7 +572,7 @@
   
   
     <li class="md-nav__item">
-      <a href="measure/martingale/def/" class="md-nav__link">
+      <a href="../def/" class="md-nav__link">
         Definitions
       </a>
     </li>
@@ -629,7 +584,7 @@
   
   
     <li class="md-nav__item">
-      <a href="measure/martingale/ddecomp/" class="md-nav__link">
+      <a href="../ddecomp/" class="md-nav__link">
         Doob's decomposition theorem
       </a>
     </li>
@@ -641,7 +596,7 @@
   
   
     <li class="md-nav__item">
-      <a href="measure/martingale/dct/" class="md-nav__link">
+      <a href="../dct/" class="md-nav__link">
         Doob's convergence theorem
       </a>
     </li>
@@ -653,7 +608,7 @@
   
   
     <li class="md-nav__item">
-      <a href="measure/martingale/ost/" class="md-nav__link">
+      <a href="../ost/" class="md-nav__link">
         Doob's optional stopping theorem
       </a>
     </li>
@@ -665,7 +620,7 @@
   
   
     <li class="md-nav__item">
-      <a href="measure/martingale/branch/" class="md-nav__link">
+      <a href="../branch/" class="md-nav__link">
         Branching process
       </a>
     </li>
@@ -675,11 +630,67 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="measure/martingale/rev/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Reversed martingale
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Reversed martingale
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#rmg" class="md-nav__link">
+    RMG
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#levys-downward-theorem" class="md-nav__link">
+    Lévy’s downward theorem
+  </a>
+  
+    <nav class="md-nav" aria-label="Lévy’s downward theorem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-proof-of-strong-lln" class="md-nav__link">
+    A proof of strong LLN
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -689,7 +700,7 @@
   
   
     <li class="md-nav__item">
-      <a href="measure/martingale/exc/" class="md-nav__link">
+      <a href="../exc/" class="md-nav__link">
         Exchangeable
       </a>
     </li>
@@ -707,7 +718,7 @@
   
   
     <li class="md-nav__item">
-      <a href="measure/markov/" class="md-nav__link">
+      <a href="../../markov/" class="md-nav__link">
         Markov chain
       </a>
     </li>
@@ -749,7 +760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="models/" class="md-nav__link">
+      <a href="../../../models/" class="md-nav__link">
         Intro
       </a>
     </li>
@@ -761,7 +772,7 @@
   
   
     <li class="md-nav__item">
-      <a href="models/reflection/" class="md-nav__link">
+      <a href="../../../models/reflection/" class="md-nav__link">
         Reflection principle
       </a>
     </li>
@@ -773,7 +784,7 @@
   
   
     <li class="md-nav__item">
-      <a href="models/polya_urn/" class="md-nav__link">
+      <a href="../../../models/polya_urn/" class="md-nav__link">
         Pólya's urn
       </a>
     </li>
@@ -785,7 +796,7 @@
   
   
     <li class="md-nav__item">
-      <a href="models/gamblers_ruin/" class="md-nav__link">
+      <a href="../../../models/gamblers_ruin/" class="md-nav__link">
         Gambler's ruin
       </a>
     </li>
@@ -797,7 +808,7 @@
   
   
     <li class="md-nav__item">
-      <a href="models/ballot/" class="md-nav__link">
+      <a href="../../../models/ballot/" class="md-nav__link">
         Bertrand's ballot
       </a>
     </li>
@@ -826,8 +837,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -836,16 +845,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#commands" class="md-nav__link">
-    Commands
+  <a href="#rmg" class="md-nav__link">
+    RMG
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#project-layout" class="md-nav__link">
-    Project layout
+  <a href="#levys-downward-theorem" class="md-nav__link">
+    Lévy’s downward theorem
   </a>
+  
+    <nav class="md-nav" aria-label="Lévy’s downward theorem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-proof-of-strong-lln" class="md-nav__link">
+    A proof of strong LLN
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -861,30 +883,49 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/sogapalag/prob.stats/edit/master/docs/index.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/sogapalag/prob.stats/edit/master/docs/measure/martingale/rev.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="welcome-to-mkdocs">Welcome to MkDocs<a class="headerlink" href="#welcome-to-mkdocs" title="Permanent link">&para;</a></h1>
-<p>For full documentation visit <a href="https://www.mkdocs.org">mkdocs.org</a>.</p>
-<h2 id="commands">Commands<a class="headerlink" href="#commands" title="Permanent link">&para;</a></h2>
-<ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs -h</code> - Print help message and exit.</li>
-</ul>
-<h2 id="project-layout">Project layout<a class="headerlink" href="#project-layout" title="Permanent link">&para;</a></h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
-</code></pre></div>
-</td></tr></table>
+                  <h1>Reversed martingale</h1>
+                
+                <h2 id="rmg">RMG<a class="headerlink" href="#rmg" title="Permanent link">&para;</a></h2>
+<p><span><span class="MathJax_Preview">F_n\downarrow F_{-\infty}=\bigcap_{n\leq 0}F_n</span><script type="math/tex">F_n\downarrow F_{-\infty}=\bigcap_{n\leq 0}F_n</script></span>. And results don't involve <span><span class="MathJax_Preview">n\rightarrow\infty</span><script type="math/tex">n\rightarrow\infty</script></span> hold.</p>
+<h2 id="levys-downward-theorem">Lévy’s downward theorem<a class="headerlink" href="#levys-downward-theorem" title="Permanent link">&para;</a></h2>
+<p>RMG iff <span><span class="MathJax_Preview">E[X_0|F_n]=X_n, \forall n\leq 0</span><script type="math/tex">E[X_0|F_n]=X_n, \forall n\leq 0</script></span>. Furthermore,</p>
+<div>
+<div class="MathJax_Preview">
+  E[X_0|F_n]\xrightarrow{a.s., L_1} E[X_0|F_{-\infty}]
+</div>
+<script type="math/tex; mode=display">
+  E[X_0|F_n]\xrightarrow{a.s., L_1} E[X_0|F_{-\infty}]
+</script>
+</div>
+<blockquote>
+<p>upward tells that gradually gain information converge to R.V., downward tells that gradually loss information converge to R.V.</p>
+</blockquote>
+<h3 id="a-proof-of-strong-lln">A proof of strong LLN<a class="headerlink" href="#a-proof-of-strong-lln" title="Permanent link">&para;</a></h3>
+<p>Let <span><span class="MathJax_Preview">X_{-n} = n^{-1}\sum^n\xi_i</span><script type="math/tex">X_{-n} = n^{-1}\sum^n\xi_i</script></span>, then according to linearity and i.i.d. with permutation, get that</p>
+<div>
+<div class="MathJax_Preview">
+  E[\xi_1| X_{-n}] = X_{-n}
+</div>
+<script type="math/tex; mode=display">
+  E[\xi_1| X_{-n}] = X_{-n}
+</script>
+</div>
+<p>Thus RMG, which implies converge to <span><span class="MathJax_Preview">X_{-\infty}=E[\xi_1|F_{-\infty}]</span><script type="math/tex">X_{-\infty}=E[\xi_1|F_{-\infty}]</script></span>, thus <span><span class="MathJax_Preview">E[X_{-\infty}]=E[\xi_1]</span><script type="math/tex">E[X_{-\infty}]=E[\xi_1]</script></span>.</p>
+<p>Note <span><span class="MathJax_Preview">X_{-\infty}</span><script type="math/tex">X_{-\infty}</script></span> remains even eliminate finite, i.e. <span><span class="MathJax_Preview">\forall k</span><script type="math/tex">\forall k</script></span></p>
+<div>
+<div class="MathJax_Preview">
+  X_{-\infty} = \limsup_n n^{-1}\sum_{i=k}^n \xi_i
+</div>
+<script type="math/tex; mode=display">
+  X_{-\infty} = \limsup_n n^{-1}\sum_{i=k}^n \xi_i
+</script>
+</div>
+<p>Thus <span><span class="MathJax_Preview">X_{-\infty}\in mT</span><script type="math/tex">X_{-\infty}\in mT</script></span>, recall Kolmogorov's 0-1 law, tail is trivial, that is <span><span class="MathJax_Preview">X_{-\infty}\xrightarrow{a.s.}\mu.\square</span><script type="math/tex">X_{-\infty}\xrightarrow{a.s.}\mu.\square</script></span></p>
                 
               
               
@@ -903,15 +944,30 @@ docs/
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
+        
+        <a href="../branch/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Branching process" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Branching process
+            </div>
+          </div>
+        </a>
+      
       
         
-        <a href="analysis/" class="md-footer__link md-footer__link--next" aria-label="Next: Intro" rel="next">
+        <a href="../exc/" class="md-footer__link md-footer__link--next" aria-label="Next: Exchangeable" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Intro
+              Exchangeable
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -940,10 +996,10 @@ docs/
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "assets/javascripts/workers/search.53c85856.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.53c85856.min.js", "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.716f8af4.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.716f8af4.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       

@@ -13,19 +13,19 @@
         <meta name="author" content="Zhaopeng Yan">
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.0">
     
     
       
-        <title>Intro - prob.stats</title>
+        <title>Markov chain - prob.stats</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.fe914879.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.fe914879.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.ba0d045b.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ba0d045b.min.css">
         
           
           
@@ -61,7 +61,7 @@
     <body dir="ltr" data-md-color-scheme="" data-md-color-primary="white" data-md-color-accent="pink">
   
     
-    <script>function __prefix(e){return new URL(".",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#welcome-to-mkdocs" class="md-skip">
+        <a href="#markov-property" class="md-skip">
           Skip to content
         </a>
       
@@ -80,7 +80,7 @@
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="prob.stats" class="md-header__button md-logo" aria-label="prob.stats" data-md-component="logo">
+    <a href="../.." title="prob.stats" class="md-header__button md-logo" aria-label="prob.stats" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Intro
+              Markov chain
             
           </span>
         </div>
@@ -171,15 +171,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="." class="md-tabs__link md-tabs__link--active">
+      <a href="../.." class="md-tabs__link">
         Introduction
       </a>
     </li>
@@ -195,7 +193,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="analysis/" class="md-tabs__link">
+      <a href="../../analysis/" class="md-tabs__link">
         Analysis
       </a>
     </li>
@@ -205,13 +203,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="measure/" class="md-tabs__link">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
         Measure
       </a>
     </li>
@@ -227,7 +227,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="models/" class="md-tabs__link">
+      <a href="../../models/" class="md-tabs__link">
         Models
       </a>
     </li>
@@ -254,7 +254,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="prob.stats" class="md-nav__button md-logo" aria-label="prob.stats" data-md-component="logo">
+    <a href="../.." title="prob.stats" class="md-nav__button md-logo" aria-label="prob.stats" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
@@ -284,14 +284,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
       
       <label class="md-nav__link" for="__nav_1">
         Introduction
@@ -307,58 +305,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Intro
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
         Intro
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#commands" class="md-nav__link">
-    Commands
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#project-layout" class="md-nav__link">
-    Project layout
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -398,7 +349,7 @@
   
   
     <li class="md-nav__item">
-      <a href="analysis/" class="md-nav__link">
+      <a href="../../analysis/" class="md-nav__link">
         Intro
       </a>
     </li>
@@ -410,7 +361,7 @@
   
   
     <li class="md-nav__item">
-      <a href="analysis/countable/" class="md-nav__link">
+      <a href="../../analysis/countable/" class="md-nav__link">
         Countable
       </a>
     </li>
@@ -422,7 +373,7 @@
   
   
     <li class="md-nav__item">
-      <a href="analysis/sequence/" class="md-nav__link">
+      <a href="../../analysis/sequence/" class="md-nav__link">
         Sequence
       </a>
     </li>
@@ -434,7 +385,7 @@
   
   
     <li class="md-nav__item">
-      <a href="analysis/series/" class="md-nav__link">
+      <a href="../../analysis/series/" class="md-nav__link">
         Series
       </a>
     </li>
@@ -446,7 +397,7 @@
   
   
     <li class="md-nav__item">
-      <a href="analysis/function/" class="md-nav__link">
+      <a href="../../analysis/function/" class="md-nav__link">
         Function
       </a>
     </li>
@@ -458,7 +409,7 @@
   
   
     <li class="md-nav__item">
-      <a href="analysis/metric/" class="md-nav__link">
+      <a href="../../analysis/metric/" class="md-nav__link">
         Metric
       </a>
     </li>
@@ -477,12 +428,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       <label class="md-nav__link" for="__nav_3">
         Measure
@@ -500,7 +453,7 @@
   
   
     <li class="md-nav__item">
-      <a href="measure/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         Intro
       </a>
     </li>
@@ -512,7 +465,7 @@
   
   
     <li class="md-nav__item">
-      <a href="measure/sigma/" class="md-nav__link">
+      <a href="../sigma/" class="md-nav__link">
         Sigma
       </a>
     </li>
@@ -524,7 +477,7 @@
   
   
     <li class="md-nav__item">
-      <a href="measure/mf/" class="md-nav__link">
+      <a href="../mf/" class="md-nav__link">
         Measurable function
       </a>
     </li>
@@ -536,7 +489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="measure/inequal/" class="md-nav__link">
+      <a href="../inequal/" class="md-nav__link">
         Inequalities
       </a>
     </li>
@@ -548,7 +501,7 @@
   
   
     <li class="md-nav__item">
-      <a href="measure/lln/" class="md-nav__link">
+      <a href="../lln/" class="md-nav__link">
         Law of large numbers
       </a>
     </li>
@@ -560,7 +513,7 @@
   
   
     <li class="md-nav__item">
-      <a href="measure/clt/" class="md-nav__link">
+      <a href="../clt/" class="md-nav__link">
         Central limit theorem
       </a>
     </li>
@@ -572,7 +525,7 @@
   
   
     <li class="md-nav__item">
-      <a href="measure/cf/" class="md-nav__link">
+      <a href="../cf/" class="md-nav__link">
         Characteristic function
       </a>
     </li>
@@ -584,7 +537,7 @@
   
   
     <li class="md-nav__item">
-      <a href="measure/ce/" class="md-nav__link">
+      <a href="../ce/" class="md-nav__link">
         Conditional expectation
       </a>
     </li>
@@ -617,7 +570,7 @@
   
   
     <li class="md-nav__item">
-      <a href="measure/martingale/def/" class="md-nav__link">
+      <a href="../martingale/def/" class="md-nav__link">
         Definitions
       </a>
     </li>
@@ -629,7 +582,7 @@
   
   
     <li class="md-nav__item">
-      <a href="measure/martingale/ddecomp/" class="md-nav__link">
+      <a href="../martingale/ddecomp/" class="md-nav__link">
         Doob's decomposition theorem
       </a>
     </li>
@@ -641,7 +594,7 @@
   
   
     <li class="md-nav__item">
-      <a href="measure/martingale/dct/" class="md-nav__link">
+      <a href="../martingale/dct/" class="md-nav__link">
         Doob's convergence theorem
       </a>
     </li>
@@ -653,7 +606,7 @@
   
   
     <li class="md-nav__item">
-      <a href="measure/martingale/ost/" class="md-nav__link">
+      <a href="../martingale/ost/" class="md-nav__link">
         Doob's optional stopping theorem
       </a>
     </li>
@@ -665,7 +618,7 @@
   
   
     <li class="md-nav__item">
-      <a href="measure/martingale/branch/" class="md-nav__link">
+      <a href="../martingale/branch/" class="md-nav__link">
         Branching process
       </a>
     </li>
@@ -677,7 +630,7 @@
   
   
     <li class="md-nav__item">
-      <a href="measure/martingale/rev/" class="md-nav__link">
+      <a href="../martingale/rev/" class="md-nav__link">
         Reversed martingale
       </a>
     </li>
@@ -689,7 +642,7 @@
   
   
     <li class="md-nav__item">
-      <a href="measure/martingale/exc/" class="md-nav__link">
+      <a href="../martingale/exc/" class="md-nav__link">
         Exchangeable
       </a>
     </li>
@@ -705,11 +658,164 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="measure/markov/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Markov chain
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Markov chain
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#markov-property" class="md-nav__link">
+    Markov property
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strong-markov-property" class="md-nav__link">
+    Strong Markov property
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapman-kolmogorov" class="md-nav__link">
+    Chapman-Kolmogorov
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#definitions" class="md-nav__link">
+    Definitions
+  </a>
+  
+    <nav class="md-nav" aria-label="Definitions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#accessible" class="md-nav__link">
+    accessible
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intercommunicate" class="md-nav__link">
+    intercommunicate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#irreducible" class="md-nav__link">
+    irreducible
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#closed" class="md-nav__link">
+    closed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recurrentpersistent" class="md-nav__link">
+    recurrent(persistent)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transient" class="md-nav__link">
+    transient
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proposition-6210" class="md-nav__link">
+    Proposition 6.2.10
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decomposition-theorem" class="md-nav__link">
+    Decomposition theorem
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#invariant-measure" class="md-nav__link">
+    invariant measure
+  </a>
+  
+    <nav class="md-nav" aria-label="invariant measure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#classic" class="md-nav__link">
+    classic
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proposition-6241" class="md-nav__link">
+    Proposition 6.2.41.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convergence-theorem-6259" class="md-nav__link">
+    Convergence Theorem 6.2.59
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -749,7 +855,7 @@
   
   
     <li class="md-nav__item">
-      <a href="models/" class="md-nav__link">
+      <a href="../../models/" class="md-nav__link">
         Intro
       </a>
     </li>
@@ -761,7 +867,7 @@
   
   
     <li class="md-nav__item">
-      <a href="models/reflection/" class="md-nav__link">
+      <a href="../../models/reflection/" class="md-nav__link">
         Reflection principle
       </a>
     </li>
@@ -773,7 +879,7 @@
   
   
     <li class="md-nav__item">
-      <a href="models/polya_urn/" class="md-nav__link">
+      <a href="../../models/polya_urn/" class="md-nav__link">
         Pólya's urn
       </a>
     </li>
@@ -785,7 +891,7 @@
   
   
     <li class="md-nav__item">
-      <a href="models/gamblers_ruin/" class="md-nav__link">
+      <a href="../../models/gamblers_ruin/" class="md-nav__link">
         Gambler's ruin
       </a>
     </li>
@@ -797,7 +903,7 @@
   
   
     <li class="md-nav__item">
-      <a href="models/ballot/" class="md-nav__link">
+      <a href="../../models/ballot/" class="md-nav__link">
         Bertrand's ballot
       </a>
     </li>
@@ -826,8 +932,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -836,15 +940,125 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#commands" class="md-nav__link">
-    Commands
+  <a href="#markov-property" class="md-nav__link">
+    Markov property
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#project-layout" class="md-nav__link">
-    Project layout
+  <a href="#strong-markov-property" class="md-nav__link">
+    Strong Markov property
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapman-kolmogorov" class="md-nav__link">
+    Chapman-Kolmogorov
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#definitions" class="md-nav__link">
+    Definitions
+  </a>
+  
+    <nav class="md-nav" aria-label="Definitions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#accessible" class="md-nav__link">
+    accessible
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intercommunicate" class="md-nav__link">
+    intercommunicate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#irreducible" class="md-nav__link">
+    irreducible
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#closed" class="md-nav__link">
+    closed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recurrentpersistent" class="md-nav__link">
+    recurrent(persistent)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transient" class="md-nav__link">
+    transient
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proposition-6210" class="md-nav__link">
+    Proposition 6.2.10
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decomposition-theorem" class="md-nav__link">
+    Decomposition theorem
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#invariant-measure" class="md-nav__link">
+    invariant measure
+  </a>
+  
+    <nav class="md-nav" aria-label="invariant measure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#classic" class="md-nav__link">
+    classic
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proposition-6241" class="md-nav__link">
+    Proposition 6.2.41.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convergence-theorem-6259" class="md-nav__link">
+    Convergence Theorem 6.2.59
   </a>
   
 </li>
@@ -861,30 +1075,96 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/sogapalag/prob.stats/edit/master/docs/index.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/sogapalag/prob.stats/edit/master/docs/measure/markov.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="welcome-to-mkdocs">Welcome to MkDocs<a class="headerlink" href="#welcome-to-mkdocs" title="Permanent link">&para;</a></h1>
-<p>For full documentation visit <a href="https://www.mkdocs.org">mkdocs.org</a>.</p>
-<h2 id="commands">Commands<a class="headerlink" href="#commands" title="Permanent link">&para;</a></h2>
-<ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs -h</code> - Print help message and exit.</li>
-</ul>
-<h2 id="project-layout">Project layout<a class="headerlink" href="#project-layout" title="Permanent link">&para;</a></h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
-</code></pre></div>
-</td></tr></table>
+                  <h1>Markov chain</h1>
+                
+                <h2 id="markov-property">Markov property<a class="headerlink" href="#markov-property" title="Permanent link">&para;</a></h2>
+<div>
+<div class="MathJax_Preview">
+  P(X_{n+1}\in A|F_n) = P(X_{n+1}\in A|X_n), \forall n, a.s.
+</div>
+<script type="math/tex; mode=display">
+  P(X_{n+1}\in A|F_n) = P(X_{n+1}\in A|X_n), \forall n, a.s.
+</script>
+</div>
+<blockquote>
+<p>i.e. memoryless, only based on current state.</p>
+</blockquote>
+<h2 id="strong-markov-property">Strong Markov property<a class="headerlink" href="#strong-markov-property" title="Permanent link">&para;</a></h2>
+<p>Hold for <span><span class="MathJax_Preview">X_{\tau}</span><script type="math/tex">X_{\tau}</script></span>, <span><span class="MathJax_Preview">\tau&lt;\infty</span><script type="math/tex">\tau<\infty</script></span>.</p>
+<h2 id="chapman-kolmogorov">Chapman-Kolmogorov<a class="headerlink" href="#chapman-kolmogorov" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>transition, equal to <em>countable</em> convolution on some middle state.</p>
+</blockquote>
+<h2 id="definitions">Definitions<a class="headerlink" href="#definitions" title="Permanent link">&para;</a></h2>
+<h3 id="accessible">accessible<a class="headerlink" href="#accessible" title="Permanent link">&para;</a></h3>
+<p><span><span class="MathJax_Preview">\rho_{xy}:=P_x(T_y&lt;\infty) &gt; 0</span><script type="math/tex">\rho_{xy}:=P_x(T_y<\infty) > 0</script></span>. i.e. <span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> leads to <span><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span>.</p>
+<h3 id="intercommunicate">intercommunicate<a class="headerlink" href="#intercommunicate" title="Permanent link">&para;</a></h3>
+<p>both accessible, <span><span class="MathJax_Preview">x\leftrightarrow y</span><script type="math/tex">x\leftrightarrow y</script></span>.</p>
+<h3 id="irreducible">irreducible<a class="headerlink" href="#irreducible" title="Permanent link">&para;</a></h3>
+<p>Any two intercommunicate.</p>
+<h3 id="closed">closed<a class="headerlink" href="#closed" title="Permanent link">&para;</a></h3>
+<p>Won't transition out.</p>
+<h3 id="recurrentpersistent">recurrent(persistent)<a class="headerlink" href="#recurrentpersistent" title="Permanent link">&para;</a></h3>
+<p><span><span class="MathJax_Preview">\rho_{xx}=1</span><script type="math/tex">\rho_{xx}=1</script></span>.</p>
+<blockquote>
+<p>equivalents, 6.2.12</p>
+</blockquote>
+<h3 id="transient">transient<a class="headerlink" href="#transient" title="Permanent link">&para;</a></h3>
+<p><span><span class="MathJax_Preview">\rho_{xx} &lt; 1</span><script type="math/tex">\rho_{xx} < 1</script></span>.</p>
+<h2 id="proposition-6210">Proposition 6.2.10<a class="headerlink" href="#proposition-6210" title="Permanent link">&para;</a></h2>
+<p>Let <span><span class="MathJax_Preview">T_y^k</span><script type="math/tex">T_y^k</script></span> be k-th return, then</p>
+<div>
+<div class="MathJax_Preview">
+  P_x(T_y^k &lt; \infty) = \rho_{xy}\rho_{yy}^{k-1} \\\\
+  E_x[N_{\infty}(y)] = \dfrac{\rho_{xy}}{1 - \rho_{yy}}
+</div>
+<script type="math/tex; mode=display">
+  P_x(T_y^k < \infty) = \rho_{xy}\rho_{yy}^{k-1} \\\\
+  E_x[N_{\infty}(y)] = \dfrac{\rho_{xy}}{1 - \rho_{yy}}
+</script>
+</div>
+<h2 id="decomposition-theorem">Decomposition theorem<a class="headerlink" href="#decomposition-theorem" title="Permanent link">&para;</a></h2>
+<div>
+<div class="MathJax_Preview">
+  S = T \cup R_1\cup R_2\cup \cdots
+</div>
+<script type="math/tex; mode=display">
+  S = T \cup R_1\cup R_2\cup \cdots
+</script>
+</div>
+<blockquote>
+<p>one transient, other ireducible.</p>
+</blockquote>
+<h2 id="invariant-measure">invariant measure<a class="headerlink" href="#invariant-measure" title="Permanent link">&para;</a></h2>
+<p>default for transition <span><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span>.</p>
+<div>
+<div class="MathJax_Preview">
+ \mu(y) = \sum_x \mu(x)p(x,y)
+</div>
+<script type="math/tex; mode=display">
+ \mu(y) = \sum_x \mu(x)p(x,y)
+</script>
+</div>
+<h3 id="classic">classic<a class="headerlink" href="#classic" title="Permanent link">&para;</a></h3>
+<div>
+<div class="MathJax_Preview">
+  \pi = \pi P
+</div>
+<script type="math/tex; mode=display">
+  \pi = \pi P
+</script>
+</div>
+<h3 id="proposition-6241">Proposition 6.2.41.<a class="headerlink" href="#proposition-6241" title="Permanent link">&para;</a></h3>
+<p><span><span class="MathJax_Preview">\pi(z) = 1/E_z[T_z]</span><script type="math/tex">\pi(z) = 1/E_z[T_z]</script></span>.</p>
+<h2 id="convergence-theorem-6259">Convergence Theorem 6.2.59<a class="headerlink" href="#convergence-theorem-6259" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Thermodynamics equilibrium.</p>
+</blockquote>
                 
               
               
@@ -903,9 +1183,24 @@ docs/
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
+        
+        <a href="../martingale/exc/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Exchangeable" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Exchangeable
+            </div>
+          </div>
+        </a>
+      
       
         
-        <a href="analysis/" class="md-footer__link md-footer__link--next" aria-label="Next: Intro" rel="next">
+        <a href="../../models/" class="md-footer__link md-footer__link--next" aria-label="Next: Intro" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
@@ -940,10 +1235,10 @@ docs/
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "assets/javascripts/workers/search.53c85856.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.53c85856.min.js", "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.716f8af4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.716f8af4.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       

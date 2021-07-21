@@ -13,19 +13,19 @@
         <meta name="author" content="Zhaopeng Yan">
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.0">
     
     
       
-        <title>Intro - prob.stats</title>
+        <title>Conditional expectation - prob.stats</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.fe914879.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.fe914879.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.ba0d045b.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ba0d045b.min.css">
         
           
           
@@ -61,7 +61,7 @@
     <body dir="ltr" data-md-color-scheme="" data-md-color-primary="white" data-md-color-accent="pink">
   
     
-    <script>function __prefix(e){return new URL(".",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#welcome-to-mkdocs" class="md-skip">
+        <a href="#radon-nikodym-theorem" class="md-skip">
           Skip to content
         </a>
       
@@ -80,7 +80,7 @@
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="prob.stats" class="md-header__button md-logo" aria-label="prob.stats" data-md-component="logo">
+    <a href="../.." title="prob.stats" class="md-header__button md-logo" aria-label="prob.stats" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Intro
+              Conditional expectation
             
           </span>
         </div>
@@ -171,15 +171,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="." class="md-tabs__link md-tabs__link--active">
+      <a href="../.." class="md-tabs__link">
         Introduction
       </a>
     </li>
@@ -195,7 +193,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="analysis/" class="md-tabs__link">
+      <a href="../../analysis/" class="md-tabs__link">
         Analysis
       </a>
     </li>
@@ -205,13 +203,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="measure/" class="md-tabs__link">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
         Measure
       </a>
     </li>
@@ -227,7 +227,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="models/" class="md-tabs__link">
+      <a href="../../models/" class="md-tabs__link">
         Models
       </a>
     </li>
@@ -254,7 +254,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="prob.stats" class="md-nav__button md-logo" aria-label="prob.stats" data-md-component="logo">
+    <a href="../.." title="prob.stats" class="md-nav__button md-logo" aria-label="prob.stats" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
@@ -284,14 +284,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
       
       <label class="md-nav__link" for="__nav_1">
         Introduction
@@ -307,58 +305,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Intro
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
         Intro
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#commands" class="md-nav__link">
-    Commands
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#project-layout" class="md-nav__link">
-    Project layout
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -398,7 +349,7 @@
   
   
     <li class="md-nav__item">
-      <a href="analysis/" class="md-nav__link">
+      <a href="../../analysis/" class="md-nav__link">
         Intro
       </a>
     </li>
@@ -410,7 +361,7 @@
   
   
     <li class="md-nav__item">
-      <a href="analysis/countable/" class="md-nav__link">
+      <a href="../../analysis/countable/" class="md-nav__link">
         Countable
       </a>
     </li>
@@ -422,7 +373,7 @@
   
   
     <li class="md-nav__item">
-      <a href="analysis/sequence/" class="md-nav__link">
+      <a href="../../analysis/sequence/" class="md-nav__link">
         Sequence
       </a>
     </li>
@@ -434,7 +385,7 @@
   
   
     <li class="md-nav__item">
-      <a href="analysis/series/" class="md-nav__link">
+      <a href="../../analysis/series/" class="md-nav__link">
         Series
       </a>
     </li>
@@ -446,7 +397,7 @@
   
   
     <li class="md-nav__item">
-      <a href="analysis/function/" class="md-nav__link">
+      <a href="../../analysis/function/" class="md-nav__link">
         Function
       </a>
     </li>
@@ -458,7 +409,7 @@
   
   
     <li class="md-nav__item">
-      <a href="analysis/metric/" class="md-nav__link">
+      <a href="../../analysis/metric/" class="md-nav__link">
         Metric
       </a>
     </li>
@@ -477,12 +428,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       <label class="md-nav__link" for="__nav_3">
         Measure
@@ -500,7 +453,7 @@
   
   
     <li class="md-nav__item">
-      <a href="measure/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         Intro
       </a>
     </li>
@@ -512,7 +465,7 @@
   
   
     <li class="md-nav__item">
-      <a href="measure/sigma/" class="md-nav__link">
+      <a href="../sigma/" class="md-nav__link">
         Sigma
       </a>
     </li>
@@ -524,7 +477,7 @@
   
   
     <li class="md-nav__item">
-      <a href="measure/mf/" class="md-nav__link">
+      <a href="../mf/" class="md-nav__link">
         Measurable function
       </a>
     </li>
@@ -536,7 +489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="measure/inequal/" class="md-nav__link">
+      <a href="../inequal/" class="md-nav__link">
         Inequalities
       </a>
     </li>
@@ -548,7 +501,7 @@
   
   
     <li class="md-nav__item">
-      <a href="measure/lln/" class="md-nav__link">
+      <a href="../lln/" class="md-nav__link">
         Law of large numbers
       </a>
     </li>
@@ -560,7 +513,7 @@
   
   
     <li class="md-nav__item">
-      <a href="measure/clt/" class="md-nav__link">
+      <a href="../clt/" class="md-nav__link">
         Central limit theorem
       </a>
     </li>
@@ -572,7 +525,7 @@
   
   
     <li class="md-nav__item">
-      <a href="measure/cf/" class="md-nav__link">
+      <a href="../cf/" class="md-nav__link">
         Characteristic function
       </a>
     </li>
@@ -582,11 +535,68 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="measure/ce/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Conditional expectation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Conditional expectation
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#radon-nikodym-theorem" class="md-nav__link">
+    Radon-Nikodym theorem
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mutually-singular" class="md-nav__link">
+    mutually singular
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lebesgue-decomposition" class="md-nav__link">
+    Lebesgue decomposition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#properties-of-ce" class="md-nav__link">
+    Properties of C.E.
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -617,7 +627,7 @@
   
   
     <li class="md-nav__item">
-      <a href="measure/martingale/def/" class="md-nav__link">
+      <a href="../martingale/def/" class="md-nav__link">
         Definitions
       </a>
     </li>
@@ -629,7 +639,7 @@
   
   
     <li class="md-nav__item">
-      <a href="measure/martingale/ddecomp/" class="md-nav__link">
+      <a href="../martingale/ddecomp/" class="md-nav__link">
         Doob's decomposition theorem
       </a>
     </li>
@@ -641,7 +651,7 @@
   
   
     <li class="md-nav__item">
-      <a href="measure/martingale/dct/" class="md-nav__link">
+      <a href="../martingale/dct/" class="md-nav__link">
         Doob's convergence theorem
       </a>
     </li>
@@ -653,7 +663,7 @@
   
   
     <li class="md-nav__item">
-      <a href="measure/martingale/ost/" class="md-nav__link">
+      <a href="../martingale/ost/" class="md-nav__link">
         Doob's optional stopping theorem
       </a>
     </li>
@@ -665,7 +675,7 @@
   
   
     <li class="md-nav__item">
-      <a href="measure/martingale/branch/" class="md-nav__link">
+      <a href="../martingale/branch/" class="md-nav__link">
         Branching process
       </a>
     </li>
@@ -677,7 +687,7 @@
   
   
     <li class="md-nav__item">
-      <a href="measure/martingale/rev/" class="md-nav__link">
+      <a href="../martingale/rev/" class="md-nav__link">
         Reversed martingale
       </a>
     </li>
@@ -689,7 +699,7 @@
   
   
     <li class="md-nav__item">
-      <a href="measure/martingale/exc/" class="md-nav__link">
+      <a href="../martingale/exc/" class="md-nav__link">
         Exchangeable
       </a>
     </li>
@@ -707,7 +717,7 @@
   
   
     <li class="md-nav__item">
-      <a href="measure/markov/" class="md-nav__link">
+      <a href="../markov/" class="md-nav__link">
         Markov chain
       </a>
     </li>
@@ -749,7 +759,7 @@
   
   
     <li class="md-nav__item">
-      <a href="models/" class="md-nav__link">
+      <a href="../../models/" class="md-nav__link">
         Intro
       </a>
     </li>
@@ -761,7 +771,7 @@
   
   
     <li class="md-nav__item">
-      <a href="models/reflection/" class="md-nav__link">
+      <a href="../../models/reflection/" class="md-nav__link">
         Reflection principle
       </a>
     </li>
@@ -773,7 +783,7 @@
   
   
     <li class="md-nav__item">
-      <a href="models/polya_urn/" class="md-nav__link">
+      <a href="../../models/polya_urn/" class="md-nav__link">
         Pólya's urn
       </a>
     </li>
@@ -785,7 +795,7 @@
   
   
     <li class="md-nav__item">
-      <a href="models/gamblers_ruin/" class="md-nav__link">
+      <a href="../../models/gamblers_ruin/" class="md-nav__link">
         Gambler's ruin
       </a>
     </li>
@@ -797,7 +807,7 @@
   
   
     <li class="md-nav__item">
-      <a href="models/ballot/" class="md-nav__link">
+      <a href="../../models/ballot/" class="md-nav__link">
         Bertrand's ballot
       </a>
     </li>
@@ -826,8 +836,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -836,15 +844,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#commands" class="md-nav__link">
-    Commands
+  <a href="#radon-nikodym-theorem" class="md-nav__link">
+    Radon-Nikodym theorem
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#project-layout" class="md-nav__link">
-    Project layout
+  <a href="#mutually-singular" class="md-nav__link">
+    mutually singular
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lebesgue-decomposition" class="md-nav__link">
+    Lebesgue decomposition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#properties-of-ce" class="md-nav__link">
+    Properties of C.E.
   </a>
   
 </li>
@@ -861,30 +883,28 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/sogapalag/prob.stats/edit/master/docs/index.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/sogapalag/prob.stats/edit/master/docs/measure/ce.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="welcome-to-mkdocs">Welcome to MkDocs<a class="headerlink" href="#welcome-to-mkdocs" title="Permanent link">&para;</a></h1>
-<p>For full documentation visit <a href="https://www.mkdocs.org">mkdocs.org</a>.</p>
-<h2 id="commands">Commands<a class="headerlink" href="#commands" title="Permanent link">&para;</a></h2>
-<ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs -h</code> - Print help message and exit.</li>
-</ul>
-<h2 id="project-layout">Project layout<a class="headerlink" href="#project-layout" title="Permanent link">&para;</a></h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
-</code></pre></div>
-</td></tr></table>
+                  <h1>Conditional expectation</h1>
+                
+                <p>Comprehensive notes, omit some condition, and maybe incorrect.</p>
+<h2 id="radon-nikodym-theorem">Radon-Nikodym theorem<a class="headerlink" href="#radon-nikodym-theorem" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>两个测度的相对变化率（求导），唯一(a.s.)</p>
+</blockquote>
+<h2 id="mutually-singular">mutually singular<a class="headerlink" href="#mutually-singular" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>两个测度被某个A划分，即<span><span class="MathJax_Preview">\mu_1(A)=0, \mu_2(A^c)=0</span><script type="math/tex">\mu_1(A)=0, \mu_2(A^c)=0</script></span></p>
+</blockquote>
+<h2 id="lebesgue-decomposition">Lebesgue decomposition<a class="headerlink" href="#lebesgue-decomposition" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>一个测度可以唯一分解为另一测度的垂直，和导 <span><span class="MathJax_Preview">v=fu+u_\perp</span><script type="math/tex">v=fu+u_\perp</script></span>.</p>
+</blockquote>
+<h2 id="properties-of-ce">Properties of C.E.<a class="headerlink" href="#properties-of-ce" title="Permanent link">&para;</a></h2>
+<p>Omit many. <a href="https://en.wikipedia.org/wiki/Conditional_expectation#Basic_properties">Basic properties</a> from wiki.</p>
                 
               
               
@@ -903,15 +923,30 @@ docs/
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
+        
+        <a href="../cf/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Characteristic function" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Characteristic function
+            </div>
+          </div>
+        </a>
+      
       
         
-        <a href="analysis/" class="md-footer__link md-footer__link--next" aria-label="Next: Intro" rel="next">
+        <a href="../martingale/def/" class="md-footer__link md-footer__link--next" aria-label="Next: Definitions" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Intro
+              Definitions
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -940,10 +975,10 @@ docs/
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "assets/javascripts/workers/search.53c85856.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.53c85856.min.js", "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.716f8af4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.716f8af4.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       
