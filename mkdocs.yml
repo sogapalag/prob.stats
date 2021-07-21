@@ -15,6 +15,31 @@ nav:
       - Series: analysis/series.md
       - Function: analysis/function.md
       - Metric: analysis/metric.md
+  - Measure:
+      - Intro: measure/index.md
+      - Sigma: measure/sigma.md
+      - Measurable function: measure/mf.md
+      - Inequalities: measure/inequal.md
+      - Law of large numbers: measure/lln.md
+      - Central limit theorem: measure/clt.md
+      - Characteristic function: measure/cf.md
+      - Conditional expectation: measure/ce.md
+      - Martingale and stopping times:
+          - Definitions: measure/martingale/def.md
+          - Doob's decomposition theorem: measure/martingale/ddecomp.md
+          - Doob's convergence theorem: measure/martingale/dct.md
+          - Doob's optional stopping theorem: measure/martingale/ost.md
+          - Branching process: measure/martingale/branch.md
+          - Reversed martingale: measure/martingale/rev.md
+          - Exchangeable: measure/martingale/exc.md
+      - Markov chain: measure/markov.md
+  - Models:
+      - Intro: models/index.md
+      - Reflection principle: models/reflection.md
+      - Pólya's urn: models/polya_urn.md
+      - Gambler's ruin: models/gamblers_ruin.md
+      - Bertrand's ballot: models/ballot.md
+
 
 
 theme:
